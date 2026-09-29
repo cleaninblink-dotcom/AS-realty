@@ -1,17 +1,21 @@
 import React from 'react';
-import { MapPin, BedDouble, Maximize2, ShieldCheck, Eye, MessageCircle, Sparkles, Trees, Compass } from 'lucide-react';
+import { MapPin, BedDouble, Maximize2, ShieldCheck, Eye, CalendarCheck, Sparkles, Trees, Compass, Heart } from 'lucide-react';
 import { Property } from '../types';
 
 interface PropertyCardProps {
   property: Property;
   onBookNow: (property: Property) => void;
   onViewDetails: (property: Property) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (property: Property) => void;
 }
 
 export const PropertyCard: React.FC<PropertyCardProps> = ({
   property,
   onBookNow,
   onViewDetails,
+  isFavorite = false,
+  onToggleFavorite,
 }) => {
   const bhkLower = (property.bhk || '').toLowerCase();
   const typeLower = (property.type || '').toLowerCase();
@@ -55,14 +59,36 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
 
         {/* Top Badges */}
         <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between gap-2 pointer-events-none">
-          <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[#002347]/90 text-[#E6C687] border border-[#C5A059]/40 backdrop-blur-md shadow-md">
-            {property.type}
-          </span>
-          {property.isFeatured && (
-            <span className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A059] text-white shadow-md">
-              <Sparkles className="w-3 h-3" />
-              Featured
+          <div className="flex items-center gap-2">
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[#002347]/90 text-[#E6C687] border border-[#C5A059]/40 backdrop-blur-md shadow-md pointer-events-auto">
+              {property.type}
             </span>
+            {property.isFeatured && (
+              <span className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A059] text-white shadow-md pointer-events-auto">
+                <Sparkles className="w-3 h-3" />
+                Featured
+              </span>
+            )}
+          </div>
+
+          {/* Favorite / Shortlist Heart Button */}
+          {onToggleFavorite && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggleFavorite(property);
+              }}
+              className={`p-2 rounded-full backdrop-blur-md transition-all pointer-events-auto shadow-md cursor-pointer ${
+                isFavorite
+                  ? 'bg-rose-600 text-white hover:bg-rose-700 scale-105'
+                  : 'bg-black/45 text-white/80 hover:text-white hover:bg-black/70'
+              }`}
+              title={isFavorite ? 'Remove from shortlist' : 'Save to shortlist'}
+              aria-label={isFavorite ? 'Remove from shortlist' : 'Save to shortlist'}
+            >
+              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-white' : ''}`} />
+            </button>
           )}
         </div>
 
@@ -148,7 +174,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               <span className="hidden xs:inline">Details</span>
             </button>
 
-            {/* Direct WhatsApp Site Visit Booking */}
+            {/* Direct Database Site Visit Booking */}
             <button
               id={`book-now-button-${property.id}`}
               type="button"
@@ -158,7 +184,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               }}
               className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-xs sm:text-sm shadow-md shadow-[#C5A059]/25 transition-all transform active:scale-95 cursor-pointer"
             >
-              <MessageCircle className="w-4 h-4 fill-[#002347] shrink-0" />
+              <CalendarCheck className="w-4 h-4 text-[#002347] shrink-0" />
               <span>Book Visit</span>
             </button>
           </div>

@@ -1,0 +1,183 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Public and private profile data for registered users",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "User UID from Firebase Auth",
+          "maxLength": 128
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user",
+          "maxLength": 256
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Full name of the user",
+          "maxLength": 128
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "Avatar URL of the user",
+          "maxLength": 1024
+        },
+        "phone": {
+          "type": "string",
+          "description": "User contact telephone number",
+          "maxLength": 32
+        },
+        "role": {
+          "type": "string",
+          "description": "Role of the user",
+          "enum": ["user", "admin"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of account creation",
+          "maxLength": 64
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last update",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "email", "displayName", "role", "createdAt"]
+    },
+    "BookVisit": {
+      "title": "BookVisit",
+      "description": "Luxury property site visit appointment booking",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique booking identifier",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the booking client",
+          "maxLength": 128
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Client full name",
+          "maxLength": 128
+        },
+        "phone": {
+          "type": "string",
+          "description": "Client phone number",
+          "maxLength": 32
+        },
+        "email": {
+          "type": "string",
+          "description": "Client email address",
+          "maxLength": 256
+        },
+        "propertyName": {
+          "type": "string",
+          "description": "Name of the luxury residence for the site visit",
+          "maxLength": 256
+        },
+        "visitDate": {
+          "type": "string",
+          "description": "Chosen date for the site visit (YYYY-MM-DD)",
+          "maxLength": 32
+        },
+        "visitTime": {
+          "type": "string",
+          "description": "Chosen time slot for the site visit",
+          "maxLength": 64
+        },
+        "notes": {
+          "type": "string",
+          "description": "Client special preferences or notes",
+          "maxLength": 1000
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the visit appointment",
+          "enum": ["pending", "confirmed", "completed", "cancelled"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of booking creation",
+          "maxLength": 64
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last update",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "userId", "fullName", "phone", "propertyName", "visitDate", "visitTime", "status", "createdAt"]
+    },
+    "FavoriteProperty": {
+      "title": "FavoriteProperty",
+      "description": "User saved favorite or shortlisted luxury residence",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property identifier",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner user UID",
+          "maxLength": 128
+        },
+        "propertyName": {
+          "type": "string",
+          "description": "Name of the luxury residence",
+          "maxLength": 256
+        },
+        "propertyPrice": {
+          "type": "string",
+          "description": "Price display string",
+          "maxLength": 64
+        },
+        "propertyLocation": {
+          "type": "string",
+          "description": "Property location",
+          "maxLength": 256
+        },
+        "propertyImage": {
+          "type": "string",
+          "description": "Image URL of the property",
+          "maxLength": 1024
+        },
+        "savedAt": {
+          "type": "string",
+          "description": "ISO timestamp of when property was shortlisted",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "userId", "propertyName", "savedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user profile data, accessible only by the owner or administrator"
+    },
+    "/users/{userId}/favorites/{propertyId}": {
+      "schema": "FavoriteProperty",
+      "description": "Subcollection of properties saved as favorites by a user"
+    },
+    "/bookVisits/{visitId}": {
+      "schema": "BookVisit",
+      "description": "Site visit appointment bookings submitted by verified users"
+    },
+    "/test/{docId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Connection test document for health checks"
+    }
+  }
+}

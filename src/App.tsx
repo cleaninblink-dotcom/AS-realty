@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Property, FilterState } from './types';
 import { PROPERTIES } from './data/properties';
 import { Navbar } from './components/Navbar';
@@ -8,11 +8,19 @@ import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { WhatsAppBookingModal } from './components/WhatsAppBookingModal';
+import { BookVisitModal } from './components/BookVisitModal';
 import { PropertyDetailModal } from './components/PropertyDetailModal';
+import { SavedPropertiesModal } from './components/SavedPropertiesModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import {
+  subscribeUserFavorites,
+  toggleFirestoreFavorite,
+  FirestoreFavorite,
+} from './lib/firestore-service';
 
-export default function App() {
+function MainApp() {
+  const { user, signInWithGoogle } = useAuth();
   const [properties] = useState<Property[]>(PROPERTIES);
   const [filters, setFilters] = useState<FilterState>({
     priceRange: 'all',
@@ -23,11 +31,32 @@ export default function App() {
 
   // Modal states
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [bookingInitialTab, setBookingInitialTab] = useState<'form' | 'list'>('form');
   const [selectedBookingPropertyName, setSelectedBookingPropertyName] = useState<string>('');
   const [detailProperty, setDetailProperty] = useState<Property | null>(null);
+  const [isSavedPropertiesOpen, setIsSavedPropertiesOpen] = useState(false);
 
-  // Synchronize hash for browser back-button & swipe-back support on mobile
-  React.useEffect(() => {
+  // User favorites in Firestore
+  const [favorites, setFavorites] = useState<Record<string, FirestoreFavorite>>({});
+
+  // Real-time Firestore subscription to user favorites
+  useEffect(() => {
+    if (!user) {
+      setFavorites({});
+      return;
+    }
+
+    const unsubscribe = subscribeUserFavorites(user.uid, (favMap) => {
+      setFavorites(favMap);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [user]);
+
+  // Synchronize hash for browser back-button & deep linking
+  useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash.startsWith('#property-')) {
@@ -38,7 +67,6 @@ export default function App() {
           return;
         }
       }
-      // If back button pressed or hash changed away from property
       if (detailProperty && !hash.startsWith('#property-')) {
         setDetailProperty(null);
       }
@@ -69,6 +97,7 @@ export default function App() {
   };
 
   const handleOpenBooking = (propertyOrName?: Property | string) => {
+    setBookingInitialTab('form');
     if (typeof propertyOrName === 'string') {
       setSelectedBookingPropertyName(propertyOrName);
     } else if (propertyOrName && typeof propertyOrName === 'object') {
@@ -76,6 +105,12 @@ export default function App() {
     } else {
       setSelectedBookingPropertyName('');
     }
+    setIsBookingOpen(true);
+  };
+
+  const handleOpenMyBookings = () => {
+    setSelectedBookingPropertyName('');
+    setBookingInitialTab('list');
     setIsBookingOpen(true);
   };
 
@@ -93,17 +128,40 @@ export default function App() {
   const handleCloseDetails = () => {
     setDetailProperty(null);
     if (window.location.hash.startsWith('#property-')) {
-      // Remove hash cleanly without page jump
       history.pushState(null, '', window.location.pathname + window.location.search);
     }
   };
 
+  const handleToggleFavorite = async (property: Property) => {
+    if (!user) {
+      try {
+        await signInWithGoogle();
+      } catch {
+        return;
+      }
+    }
+
+    if (user) {
+      const isFav = Boolean(favorites[String(property.id)]);
+      try {
+        await toggleFirestoreFavorite(user.uid, property, isFav);
+      } catch (err) {
+        console.error('Failed to toggle favorite in Firestore:', err);
+      }
+    }
+  };
+
+  const savedCount = Object.keys(favorites).length;
+
   return (
     <div className="min-h-screen bg-[#F8F9FA] text-[#0F172A] selection:bg-[#C5A059] selection:text-white">
-      {/* Navigation Bar */}
+      {/* Navigation Bar with Google Sign-in and Account Options */}
       <Navbar
         onOpenBooking={() => handleOpenBooking()}
         onScrollToSection={handleScrollToSection}
+        onOpenSavedProperties={() => setIsSavedPropertiesOpen(true)}
+        onOpenMyBookings={handleOpenMyBookings}
+        savedCount={savedCount}
       />
 
       {/* Main Content Area */}
@@ -116,13 +174,15 @@ export default function App() {
           onOpenBooking={() => handleOpenBooking()}
         />
 
-        {/* Featured Properties Grid with Interactive Filters */}
+        {/* Featured Properties Grid with Interactive Filters & Firestore Favorites */}
         <PropertyGrid
           properties={properties}
           filters={filters}
           onFilterChange={handleFilterChange}
           onBookNow={(prop) => handleOpenBooking(prop)}
           onViewDetails={handleViewDetails}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
         />
 
         {/* About AS Realty & Amit Shivpeth */}
@@ -144,12 +204,13 @@ export default function App() {
       {/* Sticky Bottom-Right WhatsApp Quick Contact Widget */}
       <FloatingWhatsApp onOpenBooking={() => handleOpenBooking()} />
 
-      {/* Interactive WhatsApp Booking Modal Component (Prompt 2 requirement) */}
-      <WhatsAppBookingModal
+      {/* Interactive Firestore & Supabase Site Visit Booking Modal */}
+      <BookVisitModal
         isOpen={isBookingOpen}
         onClose={handleCloseBooking}
         selectedPropertyName={selectedBookingPropertyName}
         properties={properties}
+        initialTab={bookingInitialTab}
       />
 
       {/* Property Deep Dive & Gallery Modal */}
@@ -157,7 +218,28 @@ export default function App() {
         property={detailProperty}
         onClose={handleCloseDetails}
         onBookNow={(prop) => handleOpenBooking(prop)}
+        isFavorite={detailProperty ? Boolean(favorites[String(detailProperty.id)]) : false}
+        onToggleFavorite={handleToggleFavorite}
+      />
+
+      {/* Shortlisted Properties Modal */}
+      <SavedPropertiesModal
+        isOpen={isSavedPropertiesOpen}
+        onClose={() => setIsSavedPropertiesOpen(false)}
+        favorites={favorites}
+        properties={properties}
+        onRemoveFavorite={handleToggleFavorite}
+        onBookVisit={(prop) => handleOpenBooking(prop)}
+        onViewDetails={handleViewDetails}
       />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <MainApp />
+    </AuthProvider>
   );
 }

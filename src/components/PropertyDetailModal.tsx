@@ -18,6 +18,7 @@ import {
   MessageSquare,
   CheckCircle2,
   Phone,
+  Heart,
 } from 'lucide-react';
 import { Property } from '../types';
 import { COMPANY_DETAILS } from '../data/properties';
@@ -26,12 +27,16 @@ interface PropertyDetailModalProps {
   property: Property | null;
   onClose: () => void;
   onBookNow: (property: Property) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (property: Property) => void;
 }
 
 export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
   property,
   onClose,
   onBookNow,
+  isFavorite = false,
+  onToggleFavorite,
 }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [copiedShare, setCopiedShare] = useState(false);
@@ -185,8 +190,24 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             </p>
           </div>
 
-          {/* Action buttons (Share & Close) */}
+          {/* Action buttons (Favorite, Share & Close) */}
           <div className="flex items-center gap-1.5 shrink-0">
+            {onToggleFavorite && (
+              <button
+                type="button"
+                onClick={() => onToggleFavorite(property)}
+                className={`p-2 rounded-xl transition-all cursor-pointer ${
+                  isFavorite
+                    ? 'bg-rose-50 text-rose-600 border border-rose-200'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                }`}
+                title={isFavorite ? 'Remove from shortlist' : 'Shortlist Property'}
+                aria-label={isFavorite ? 'Remove from shortlist' : 'Shortlist Property'}
+              >
+                <Heart className={`w-4 h-4 ${isFavorite ? 'fill-rose-600' : ''}`} />
+              </button>
+            )}
+
             <button
               onClick={handleShare}
               className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-[#002347] transition-colors relative cursor-pointer"

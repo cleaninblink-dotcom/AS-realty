@@ -598,6 +598,270 @@ export const RAW_NAGPUR_PROPERTIES = [
       "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
     ]
+  },
+  {
+    "id": 201,
+    "name": "NP270 Shankarpur Luxury Duplex",
+    "location": "Shankarpur",
+    "bhk": "3 & 4 BHK",
+    "type": "Luxury Duplex Villas",
+    "price": "₹76.00 L – ₹1.20 Cr",
+    "price_value": 7600000,
+    "sqft": 1982,
+    "bathrooms": 4,
+    "isFeatured": true,
+    "reraId": "NP-PRJ-270",
+    "possession": "Under Construction (Possession 2026)",
+    "imageUrl": "/assets/nagpurproperty/np270_duplex_spec.png",
+    "gallery": [
+      "/assets/nagpurproperty/np270_duplex_spec.png",
+      "/assets/nagpurproperty/np270_duplex_floorplan.png",
+      "/assets/nagpurproperty/np270_duplex_amenities.png"
+    ],
+    "features": [
+      "Gated 5-Acre Enclave with 70% Open Greenery",
+      "Independent 3 & 4 BHK Duplex Architecture",
+      "Semi-Furnished Interior with Premium Vitrified Tiling",
+      "Just 2 km to Metro & Shankarpur Junction"
+    ],
+    "amenities": [
+      "Private 2-Car Covered Portico",
+      "Clubhouse, Swimming Pool & Kids Play Lawn",
+      "Borewell & 24/7 Municipal Corporation Water",
+      "Gated Security Post & 24/7 CCTV Monitoring"
+    ],
+    "description": "Featured on nagpurproperty.com under Project ID NP270, this premium 5-acre residential community in Shankarpur features 101 exclusive duplex villas. Boasting 70% open green space, private car parking, expansive living rooms, and proximity to Wardha Road and MIHAN corridor."
+  },
+  {
+    "id": 202,
+    "name": "NP335 Besa Pipla Grand Estate",
+    "location": "Besa",
+    "bhk": "Plot",
+    "type": "Sanctioned Plotted Township",
+    "price": "₹63.00 L – ₹1.10 Cr",
+    "price_value": 6300000,
+    "sqft": 2400,
+    "bathrooms": 0,
+    "isFeatured": true,
+    "reraId": "NP-PRJ-335",
+    "possession": "New Launch / Immediate Registry",
+    "imageUrl": "/assets/nagpurproperty/np335_besa_cover.png",
+    "gallery": [
+      "/assets/nagpurproperty/np335_besa_cover.png",
+      "/assets/nagpurproperty/np335_besa_spec.jpg",
+      "/assets/nagpurproperty/np335_besa_floorplan.jpg"
+    ],
+    "features": [
+      "17-Acre Mega Sanctioned Township on Besa Pipla Road",
+      "RL Sanctioned Layout with Individual 7/12 & PR Card",
+      "Underground Stormwater Drainage & Electrification",
+      "Prime Corner & Garden Facing Plotted Parcels"
+    ],
+    "amenities": [
+      "40-ft Asphalt Avenues with LED Illumination",
+      "Landscaped Central Theme Garden & Jogging Track",
+      "24/7 Monitored Access with Guard Outpost",
+      "Borewell & Dedicated Overhead Water Distribution"
+    ],
+    "description": "Directly curated from nagpurproperty.com (NP335), this 17-acre grand layout is situated on prominent Besa Pipla Road in South Nagpur. Featuring fully-demarcated sanctioned plots with complete underground infrastructure, club amenities, and immediate construction permission."
+  },
+  {
+    "id": 203,
+    "name": "NP267 Besa Residency & Penthouses",
+    "location": "Besa",
+    "bhk": "3 BHK",
+    "type": "Flats & Duplex Residences",
+    "price": "₹53.00 L – ₹1.85 Cr",
+    "price_value": 5300000,
+    "sqft": 1850,
+    "bathrooms": 3,
+    "isFeatured": false,
+    "reraId": "NP-PRJ-267",
+    "possession": "Under Construction",
+    "imageUrl": "/assets/nagpurproperty/np267_besa_cover.png",
+    "gallery": [
+      "/assets/nagpurproperty/np267_besa_cover.png",
+      "/assets/nagpurproperty/np267_besa_amenities.png",
+      "/assets/nagpurproperty/np_land_5484_ghogali.png"
+    ],
+    "features": [
+      "Sprawling 10-Acre Campus with 80% Open Skies",
+      "Vastu-Compliant 2 & 3 BHK Flats and Duplex Units",
+      "Grand Balconies Overlooking Pool & Central Lawns",
+      "Approved for Home Loans by Leading National Banks"
+    ],
+    "amenities": [
+      "Swimming Pool, Sundeck & Clubhouse",
+      "1 to 4 Reserved Car Parking Slots",
+      "100% Generator Backup for Elevators & Common Zones",
+      "Multi-Level Security & Fire Safety Infrastructure"
+    ],
+    "description": "Sourced from nagpurproperty.com (NP267), this landmark 10-acre residential enclave in Besa provides an elevated lifestyle with 80% open recreational space. Offering thoughtfully designed residences ranging from 850 to 3,600 sq.ft. with resort amenities and rapid city connectivity."
+  },
+  {
+    "id": 204,
+    "name": "NP254 Besa Pipla Modern Heights",
+    "location": "Besa",
+    "bhk": "2 BHK",
+    "type": "Modern High-Rise Flats",
+    "price": "₹30.00 L – ₹45.00 L",
+    "price_value": 3000000,
+    "sqft": 1150,
+    "bathrooms": 2,
+    "isFeatured": false,
+    "reraId": "NP-PRJ-254",
+    "possession": "Under Construction (14 Floors)",
+    "imageUrl": "/assets/nagpurproperty/np254_besa_cover.png",
+    "gallery": [
+      "/assets/nagpurproperty/np254_besa_cover.png",
+      "/assets/nagpurproperty/np254_besa_spec.png",
+      "/assets/nagpurproperty/np254_besa_amenities.png"
+    ],
+    "features": [
+      "14-Storey Architectural Tower on Besa-Pipla Corridor",
+      "Optimized 2 BHK Layouts with Cross Ventilation",
+      "70% Open Space & High-Speed Elevators with ARD",
+      "State Bank of India Pre-Approved Project"
+    ],
+    "amenities": [
+      "2 Reserved Covered Car Parking Spaces",
+      "Children's Play Yard & Elder Seating Gazebo",
+      "Rainwater Harvesting System & 24/7 Security",
+      "Overlooking Landscaped Club & Garden"
+    ],
+    "description": "Listed on nagpurproperty.com (NP254), this stylish 14-storey high-rise development on Besa Pipla Road brings modern urban living at an accessible price point. Features 300 modern units set across 4 acres with 70% open landscaped grounds."
+  },
+  {
+    "id": 205,
+    "name": "NP389 Aarohan Greens Jamtha",
+    "location": "Jamtha",
+    "bhk": "Plot",
+    "type": "NMRDA Sanctioned Layout Plots",
+    "price": "₹45.00 L – ₹78.00 L",
+    "price_value": 4500000,
+    "sqft": 1800,
+    "bathrooms": 0,
+    "isFeatured": false,
+    "reraId": "NP-PRJ-389",
+    "possession": "Possession by Nov 2025",
+    "imageUrl": "/assets/nagpurproperty/np389_jamtha_cover.jpg",
+    "gallery": [
+      "/assets/nagpurproperty/np389_jamtha_cover.jpg",
+      "/assets/nagpurproperty/np_land_5496_outer_ring.png",
+      "/assets/nagpurproperty/np_land_5471_new_manish.png"
+    ],
+    "features": [
+      "Aarohan Saraswati Infra Sanctioned Layout in Jamtha",
+      "Near VCA International Stadium & Wardha Road Expressway",
+      "RL Sanctioned Ready for Immediate Construction",
+      "High Capital Growth Belt Adjoining MIHAN SEZ"
+    ],
+    "amenities": [
+      "Concrete Internal Roads with Underground Drainage",
+      "Avenue Plantations & Landscaped Community Park",
+      "Underground Electric Connections to Plot Edges",
+      "Grand Entrance Gate & Gated Boundary"
+    ],
+    "description": "Featured on nagpurproperty.com under Project NP389, Aarohan Greens in Jamtha presents high-growth NMRDA-sanctioned plots located in close proximity to the VCA Stadium and Wardha Road corridor. Perfect for custom bungalow creation and land appreciation."
+  },
+  {
+    "id": 206,
+    "name": "NP356 Besa Parkview Residency",
+    "location": "Besa",
+    "bhk": "2 BHK",
+    "type": "Parkview Gated Residences",
+    "price": "₹42.00 L – ₹52.00 L",
+    "price_value": 4200000,
+    "sqft": 1050,
+    "bathrooms": 2,
+    "isFeatured": false,
+    "reraId": "NP-PRJ-356",
+    "possession": "Under Construction / Nearing Possession",
+    "imageUrl": "/assets/nagpurproperty/np356_besa_cover.png",
+    "gallery": [
+      "/assets/nagpurproperty/np356_besa_cover.png",
+      "/assets/nagpurproperty/np_land_5477_madhav_nagar.png",
+      "/assets/nagpurproperty/np267_besa_cover.png"
+    ],
+    "features": [
+      "Boutique Low-Density Gated Campus (Only 56 Residences)",
+      "8 Elegant G+7 Residential Wings with Garden Views",
+      "Just 1.5 km to Metro Station & Renowned Schools",
+      "Full OC & CC Approvals with Freehold Title"
+    ],
+    "amenities": [
+      "Reserved Covered Stilt Car Parking",
+      "Tranquil Central Park with Walking Trails",
+      "Municipal Water Connection & Silent Generator Backup",
+      "24/7 Security Booth with CCTV Monitoring"
+    ],
+    "description": "Sourced from nagpurproperty.com (NP356), this peaceful 2-acre gated enclave in Besa comprises 8 low-rise wings housing only 56 privileged families. Offers well-lit park-facing 2 BHK residences with OC/CC certifications and immediate handover readiness."
+  },
+  {
+    "id": 207,
+    "name": "NP5495 Gotal Pajri Sanctioned Plot",
+    "location": "Gotal Pajri",
+    "bhk": "Plot",
+    "type": "Sanctioned Residential Plot",
+    "price": "₹62.00 L",
+    "price_value": 6200000,
+    "sqft": 1570,
+    "bathrooms": 0,
+    "isFeatured": false,
+    "reraId": "NP-LAND-5495",
+    "possession": "Immediate Registry & Construction",
+    "imageUrl": "/assets/nagpurproperty/np_land_5495_gotal_pajri.jpg",
+    "gallery": [
+      "/assets/nagpurproperty/np_land_5495_gotal_pajri.jpg",
+      "/assets/nagpurproperty/np_land_5484_ghogali.png",
+      "/assets/nagpurproperty/np_land_5496_outer_ring.png"
+    ],
+    "features": [
+      "1,570 Sq.Ft. Sanctioned Residential Plot in Gotal Pajri",
+      "Clear RL & 7/12 Documentations for Immediate Registry",
+      "Direct Wide Asphalt Road Access with Avenue Streetlights",
+      "Nestled in High-Demand South Nagpur Residential Sector"
+    ],
+    "amenities": [
+      "Concrete Drainage Network & Water Lines Ready",
+      "Demarcated Boundary Stones on All Sides",
+      "Immediate Electricity Connection Available",
+      "Rapid Connectivity to Besa Square and Outer Ring Road"
+    ],
+    "description": "Verified plot listing directly from nagpurproperty.com (Listing ID 5495). Situated in Gotal Pajri near Besa, this 1,570 sq.ft. sanctioned plot is ready for custom independent bungalow construction with clean legal titles and full infrastructure."
+  },
+  {
+    "id": 208,
+    "name": "NP5482 Jaywant Nagar Prime Estate Plot",
+    "location": "Jaywant Nagar",
+    "bhk": "Plot",
+    "type": "Prime City Bungalow Plot",
+    "price": "₹2.58 Cr",
+    "price_value": 25800000,
+    "sqft": 4300,
+    "bathrooms": 0,
+    "isFeatured": true,
+    "reraId": "NP-LAND-5482",
+    "possession": "Immediate Possession",
+    "imageUrl": "/assets/nagpurproperty/np_land_5482_jaywant_nagar.jpg",
+    "gallery": [
+      "/assets/nagpurproperty/np_land_5482_jaywant_nagar.jpg",
+      "/assets/nagpurproperty/np_land_5477_madhav_nagar.png",
+      "/assets/nagpurproperty/np_land_5471_new_manish.png"
+    ],
+    "features": [
+      "Sprawling 4,300 Sq.Ft. Landmark Parcel in Jaywant Nagar",
+      "Dual-Road Corner Frontage Ideal for Luxury Mansion",
+      "Established High-End Residential Neighborhood",
+      "100% Clear Freehold Title with Municipal Approvals"
+    ],
+    "amenities": [
+      "Municipal Water Supply & Deep Groundwater Borewell",
+      "3-Phase Power Grid Connection",
+      "Wide Paved Roads & Streetlights",
+      "Safe, Secure, and Tranquil VIP Enclave"
+    ],
+    "description": "Featured on nagpurproperty.com under ID 5482, this sprawling 4,300 sq.ft. corner plot in Jaywant Nagar offers an exceptional canvas for constructing an independent private villa or family estate in one of Nagpur's most reputable residential districts."
   }
 ];
 

@@ -1,6 +1,6 @@
 {
   "name": "Remix AS Realty",
-  "description": "High-end luxury real estate website for AS Realty, owned by Amit Shivpeth, exclusively featuring premier Nagpur luxury residences, penthouses, sanctioned plots, farm/field estates, and direct WhatsApp site visit scheduling.",
+  "description": "High-end luxury real estate portal for AS Realty, owned by Amit Shivpeth, exclusively featuring premier Nagpur luxury residences, penthouses, sanctioned plots, farm estates, and direct database site visit bookings powered by Supabase.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

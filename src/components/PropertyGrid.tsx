@@ -9,6 +9,8 @@ interface PropertyGridProps {
   onFilterChange: (newFilters: Partial<FilterState>) => void;
   onBookNow: (property: Property) => void;
   onViewDetails: (property: Property) => void;
+  favorites?: Record<string, any>;
+  onToggleFavorite?: (property: Property) => void;
 }
 
 export const PropertyGrid: React.FC<PropertyGridProps> = ({
@@ -17,6 +19,8 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
   onFilterChange,
   onBookNow,
   onViewDetails,
+  favorites = {},
+  onToggleFavorite,
 }) => {
   // Dynamically extract unique sorted locations from properties
   const availableLocations = useMemo(() => {
@@ -85,7 +89,9 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
             typeLower.includes('villa') ||
             typeLower.includes('row house') ||
             typeLower.includes('bungalow') ||
-            bhkLower.includes('villa');
+            typeLower.includes('duplex') ||
+            bhkLower.includes('villa') ||
+            bhkLower.includes('duplex');
           if (!isVilla) return false;
         } else if (filters.typology === '1 BHK') {
           const has1BHK = bhkLower.includes('1') && (bhkLower.includes('bhk') || bhkLower.includes('flats'));
@@ -321,6 +327,8 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
                 property={property}
                 onBookNow={onBookNow}
                 onViewDetails={onViewDetails}
+                isFavorite={Boolean(favorites[String(property.id)])}
+                onToggleFavorite={onToggleFavorite}
               />
             ))}
           </div>
