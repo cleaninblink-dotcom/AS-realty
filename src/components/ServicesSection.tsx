@@ -49,7 +49,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
               Bespoke Client Services
             </h2>
             <p className="text-slate-600 text-sm mt-1 max-w-xl">
-              From your initial consultation with Amit Shivpeth to handing over the keys of your private estate.
+              From your initial consultation with {COMPANY_DETAILS.founder} to handing over the keys of your private estate.
             </p>
           </div>
 

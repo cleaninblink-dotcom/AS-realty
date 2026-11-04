@@ -45,7 +45,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
             About <span className="text-[#C5A059]">{COMPANY_DETAILS.name}</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 font-light leading-relaxed">
-            Founded and spearheaded by <strong className="text-[#002347] font-semibold">{COMPANY_DETAILS.founder}</strong>, AS Realty is established on the cornerstone principles of trust, bespoke personal attention, and architectural pedigree.
+            Founded and spearheaded by <strong className="text-[#002347] font-semibold">{COMPANY_DETAILS.founder}</strong>, Nagpur Acres is established on the cornerstone principles of trust, bespoke personal attention, and architectural pedigree.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
               <div className="aspect-[4/5] relative overflow-hidden bg-slate-900">
                 <img
                   src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80"
-                  alt="Amit Shivpeth - AS Realty"
+                  alt="Aditya Shivpeth - Nagpur Acres"
                   className="w-full h-full object-cover object-top filter brightness-95 contrast-105 group-hover:scale-102 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -71,7 +71,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
                     {COMPANY_DETAILS.title}
                   </p>
                   <p className="text-[11px] text-slate-500 mt-1">
-                    AS Realty — Defining Elite Living
+                    Nagpur Acres — Defining Elite Living
                   </p>
                 </div>
               </div>
@@ -88,13 +88,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
                 "A true luxury residence is not merely square footage; it is a legacy crafted for generations."
               </h3>
               <p>
-                Under the direct stewardship of <strong className="text-[#002347]">Amit Shivpeth</strong>, AS Realty was conceived to bring world-class luxury real estate advisory, transparency, and absolute transactional discretion specifically to Nagpur.
+                Under the direct stewardship of <strong className="text-[#002347]">{COMPANY_DETAILS.founder}</strong>, Nagpur Acres was conceived to bring world-class luxury real estate advisory, transparency, and absolute transactional discretion specifically to Nagpur.
               </p>
               <p>
-                Rather than acting as high-volume listing aggregators, AS Realty operates as a private family office for property acquisitions in Nagpur. We limit our active portfolio to an exclusive roster of trophy assets across Nagpur’s premier enclaves—including Civil Lines, Ramdaspeth, Dharampeth, Byramji Town, and Seminary Hills.
+                Rather than acting as high-volume listing aggregators, Nagpur Acres operates as a private family office for property acquisitions in Nagpur. We limit our active portfolio to an exclusive roster of trophy assets across Nagpur’s premier enclaves—including Civil Lines, Ramdaspeth, Dharampeth, Byramji Town, and Seminary Hills.
               </p>
               <p>
-                Every client consultation is conducted personally by Amit Shivpeth, guaranteeing direct accountability, local market intelligence, and white-glove execution at every milestone.
+                Every client consultation is conducted personally by {COMPANY_DETAILS.founder}, guaranteeing direct accountability, local market intelligence, and white-glove execution at every milestone.
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
                 onClick={onOpenBooking}
                 className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#C5A059]/20 transition-all cursor-pointer"
               >
-                <span>Schedule Consultation with Amit Shivpeth</span>
+                <span>Schedule Consultation with {COMPANY_DETAILS.founder}</span>
                 <ArrowUpRight className="w-4 h-4 text-[#002347]" />
               </button>
             </div>

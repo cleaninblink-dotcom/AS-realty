@@ -8,8 +8,9 @@ interface FloatingWhatsAppProps {
 
 export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBooking }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
-  const directWhatsAppUrl = `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello AS Realty, I am interested in inquiring about your luxury real estate portfolio.')}`;
+  const directWhatsAppUrl = `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello Nagpur Acres, I am interested in inquiring about your luxury real estate portfolio.')}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
@@ -18,12 +19,21 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
         <div className="mb-3 w-80 p-4 rounded-2xl bg-white border border-slate-200 border-b-4 border-b-[#002347] shadow-2xl text-slate-800 animate-fadeIn">
           <div className="flex items-start justify-between pb-3 border-b border-slate-100">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-[#002347] text-[#E6C687] border border-[#C5A059]/40 flex items-center justify-center font-bold text-sm">
-                AS
+              <div className="w-9 h-9 rounded-full bg-[#002347] text-[#E6C687] border border-[#C5A059]/60 overflow-hidden flex items-center justify-center font-bold text-sm shrink-0">
+                {!logoError && COMPANY_DETAILS.logoUrl ? (
+                  <img
+                    src={COMPANY_DETAILS.logoUrl}
+                    alt="Nagpur Acres"
+                    className="w-full h-full object-cover"
+                    onError={() => setLogoError(true)}
+                  />
+                ) : (
+                  <span>NA</span>
+                )}
               </div>
               <div>
                 <h4 className="text-sm font-serif-luxury font-bold text-[#002347]">
-                  AS Realty Concierge
+                  Nagpur Acres Concierge
                 </h4>
                 <p className="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -41,7 +51,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
           </div>
 
           <p className="text-xs text-slate-600 my-3 leading-relaxed">
-            Welcome to <strong className="text-[#002347]">AS Realty</strong>. Connect directly with our team under the leadership of <strong className="text-[#002347]">Amit Shivpeth</strong>.
+            Welcome to <strong className="text-[#002347]">Nagpur Acres</strong>. Connect directly with our team under the leadership of <strong className="text-[#002347]">{COMPANY_DETAILS.founder}</strong>.
           </p>
 
           <div className="space-y-2">
@@ -71,13 +81,13 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
 
             <a
               id="floating-instagram-link"
-              href="https://www.instagram.com/asrealty.official?igsi=MXhteGNhM3Y0YjBmcg=="
+              href={COMPANY_DETAILS.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-1.5 pt-1 text-[11px] font-semibold text-slate-500 hover:text-[#B8924B] transition-colors"
             >
               <Instagram className="w-3.5 h-3.5 text-[#B8924B]" />
-              <span>Follow us: @asrealty.official</span>
+              <span>Follow us: {COMPANY_DETAILS.instagramHandle}</span>
             </a>
           </div>
         </div>

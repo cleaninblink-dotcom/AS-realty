@@ -8,6 +8,8 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking }) => {
+  const [logoError, setLogoError] = React.useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -18,22 +20,31 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
       <div className="border-b border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#001730] border border-[#C5A059]/50 flex items-center justify-center font-cinzel text-[#E6C687] font-bold text-sm">
-              AS
+            <div className="w-10 h-10 rounded-lg bg-[#001730] border border-[#C5A059]/60 overflow-hidden flex items-center justify-center shrink-0">
+              {!logoError && COMPANY_DETAILS.logoUrl ? (
+                <img
+                  src={COMPANY_DETAILS.logoUrl}
+                  alt="Nagpur Acres Logo"
+                  className="w-full h-full object-cover"
+                  onError={() => setLogoError(true)}
+                />
+              ) : (
+                <span className="font-cinzel text-[#E6C687] font-bold text-sm">NA</span>
+              )}
             </div>
             <div>
               <span className="font-cinzel text-lg font-bold text-white tracking-wider block">
-                AS REALTY
+                NAGPUR ACRES
               </span>
               <span className="text-[11px] text-slate-300">
-                Under the Leadership of Amit Shivpeth
+                Under the Leadership of {COMPANY_DETAILS.founder}
               </span>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
             <a
-              href={`https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello AS Realty, I would like to connect with your luxury advisory desk.')}`}
+              href={`https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello Nagpur Acres, I would like to connect with your luxury advisory desk.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#001730] border border-emerald-400/40 text-emerald-300 hover:bg-emerald-600 hover:text-white transition-all font-medium"
@@ -61,58 +72,58 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
             Defining Elite Living
           </h4>
           <p className="text-slate-300 leading-relaxed text-xs">
-            AS Realty is Nagpur’s dedicated boutique luxury real estate advisory, representing the finest residences across Civil Lines, Ramdaspeth, Dharampeth, Byramji Town, and Seminary Hills.
+            Nagpur Acres is Nagpur’s dedicated boutique luxury real estate advisory, representing the finest private residences, sky penthouses, and prime commercial assets across Civil Lines, Ramdaspeth, Dharampeth, Byramji Town, and Seminary Hills.
           </p>
           <div className="flex items-center gap-2 text-[11px] text-[#E6C687] pt-1 font-medium">
             <ShieldCheck className="w-4 h-4" />
-            <span>100% MahaRERA Registered Nagpur Properties</span>
+            <span>100% MahaRERA Due Diligence Audited</span>
           </div>
         </div>
 
-        {/* Quick Navigation */}
+        {/* Advisory Focus */}
         <div className="space-y-2.5">
           <h4 className="text-xs font-semibold uppercase tracking-widest text-[#E6C687]">
-            Nagpur Portfolios
+            Advisory Focus
           </h4>
           <ul className="space-y-2">
             <li>
               <button
-                onClick={() => onScrollToSection('featured-properties-section')}
+                onClick={() => onScrollToSection('services-section')}
                 className="hover:text-white transition-colors text-left cursor-pointer"
               >
-                Civil Lines Sky Penthouses
+                Civil Lines & Ramdaspeth High-Rises
               </button>
             </li>
             <li>
               <button
-                onClick={() => onScrollToSection('featured-properties-section')}
+                onClick={() => onScrollToSection('services-section')}
                 className="hover:text-white transition-colors text-left cursor-pointer"
               >
-                Ramdaspeth High-Rise Residences
+                Dharampeth Luxury Duplexes & Penthouses
               </button>
             </li>
             <li>
               <button
-                onClick={() => onScrollToSection('featured-properties-section')}
+                onClick={() => onScrollToSection('services-section')}
                 className="hover:text-white transition-colors text-left cursor-pointer"
               >
-                Dharampeth Garden Duplexes
+                Byramji Town & Seminary Hills Estates
               </button>
             </li>
             <li>
               <button
-                onClick={() => onScrollToSection('featured-properties-section')}
+                onClick={() => onScrollToSection('services-section')}
                 className="hover:text-white transition-colors text-left cursor-pointer"
               >
-                Byramji Town Private Manors
+                Strategic Commercial Land & Mixed-Use
               </button>
             </li>
             <li>
               <button
-                onClick={() => onScrollToSection('featured-properties-section')}
+                onClick={() => onScrollToSection('services-section')}
                 className="hover:text-white transition-colors text-left cursor-pointer"
               >
-                Wardha Road & MIHAN Mansions
+                NRI & Global Capital Repatriation Desk
               </button>
             </li>
           </ul>
@@ -129,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
                 onClick={() => onScrollToSection('founder-section')}
                 className="hover:text-white transition-colors text-left cursor-pointer"
               >
-                About Amit Shivpeth
+                About {COMPANY_DETAILS.founder}
               </button>
             </li>
             <li>
@@ -153,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
                 onClick={onOpenBooking}
                 className="hover:text-[#E6C687] text-white font-medium transition-colors text-left cursor-pointer"
               >
-                Schedule Meeting on WhatsApp
+                Schedule Private Consultation
               </button>
             </li>
           </ul>
@@ -169,24 +180,24 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
           </p>
           <div className="pt-1 space-y-2">
             <a
-              href="https://www.instagram.com/asrealty.official?igsi=MXhteGNhM3Y0YjBmcg=="
+              href={COMPANY_DETAILS.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#833ab4]/30 via-[#fd1d1d]/30 to-[#fcb045]/30 border border-[#E6C687]/50 hover:border-[#E6C687] text-white hover:text-[#E6C687] text-xs font-semibold transition-all group shadow-sm"
               aria-label="Follow us on Instagram"
             >
               <Instagram className="w-4 h-4 text-[#E6C687] group-hover:scale-110 transition-transform" />
-              <span>Follow us @asrealty.official</span>
+              <span>Follow us {COMPANY_DETAILS.instagramHandle}</span>
             </a>
 
             <div className="flex items-center gap-3 pt-1">
               <a
-                href="https://www.instagram.com/asrealty.official?igsi=MXhteGNhM3Y0YjBmcg=="
+                href={COMPANY_DETAILS.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-[#001730] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-[#E6C687] transition-all"
                 aria-label="Instagram"
-                title="Follow us on Instagram"
+                title={`Follow us on Instagram ${COMPANY_DETAILS.instagramHandle}`}
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -217,10 +228,10 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
       <div className="border-t border-white/10 py-6 bg-[#001730]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
           <p className="text-[11px] text-slate-400 leading-relaxed">
-            <strong>Disclaimer:</strong> AS Realty (Owned by Amit Shivpeth) is an authorized luxury real estate advisory and facilitation firm. All property details, architectural perspectives, floor plans, and pricing are indicative and subject to verification against official developer RERA disclosures. Registration certificates and project sanctions are available for inspection upon private meeting.
+            <strong>Disclaimer:</strong> Nagpur Acres (Owned by {COMPANY_DETAILS.founder}) is an authorized luxury real estate advisory and facilitation firm. All advisory disclosures, architectural perspectives, and developer agreements are verified against official MahaRERA documentation.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-2 border-t border-white/10 text-[11px] text-slate-400">
-            <span>© {new Date().getFullYear()} AS Realty. All Rights Reserved. Owned by Amit Shivpeth.</span>
+            <span>© {new Date().getFullYear()} Nagpur Acres. All Rights Reserved. Owned by {COMPANY_DETAILS.founder}.</span>
             <span>Crafted for Discerning Connoisseurs of Architecture.</span>
           </div>
         </div>

@@ -16,7 +16,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
     e.preventDefault();
     if (!name.trim()) return;
 
-    const formattedMessage = `Hello AS Realty,\nI would like to inquire regarding luxury real estate advisory with Amit Shivpeth.\n👤 Name: ${name.trim()}\n📱 Phone: ${phone.trim() || 'Not specified'}\n🏢 Interest: ${interest}\n💬 Message: ${message.trim() || 'Please arrange a call back.'}`;
+    const formattedMessage = `Hello Nagpur Acres,\nI would like to inquire regarding luxury real estate advisory with ${COMPANY_DETAILS.founder}.\n👤 Name: ${name.trim()}\n📱 Phone: ${phone.trim() || 'Not specified'}\n🏢 Interest: ${interest}\n💬 Message: ${message.trim() || 'Please arrange a call back.'}`;
     const url = `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -32,10 +32,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
                 Private Advisory
               </div>
               <h2 className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#002347] tracking-tight">
-                Connect with AS Realty
+                Connect with Nagpur Acres
               </h2>
               <p className="text-slate-600 text-sm mt-2 leading-relaxed max-w-lg">
-                Whether you are exploring private acquisitions in Civil Lines, seeking high-floor penthouses in Ramdaspeth, or arranging a confidential meeting with <strong className="text-[#002347] font-semibold">Amit Shivpeth</strong>, our executive desk is at your service.
+                Whether you are exploring private acquisitions in Civil Lines, seeking high-floor penthouses in Ramdaspeth, or arranging a confidential meeting with <strong className="text-[#002347] font-semibold">{COMPANY_DETAILS.founder}</strong>, our executive desk is at your service.
               </p>
             </div>
 
@@ -43,7 +43,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
             <div className="space-y-4">
               {/* WhatsApp Direct */}
               <a
-                href={`https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello AS Realty, I would like to schedule a private advisory meeting.')}`}
+                href={`https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello Nagpur Acres, I would like to schedule a private advisory meeting.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200 border-b-4 border-b-emerald-600 hover:border-b-emerald-500 transition-all flex items-start gap-4 group block shadow-sm hover:shadow-md"
@@ -91,7 +91,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
               {/* Instagram Channel */}
               <a
                 id="contact-instagram-card"
-                href="https://www.instagram.com/asrealty.official?igsi=MXhteGNhM3Y0YjBmcg=="
+                href={COMPANY_DETAILS.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200 border-b-4 border-b-[#002347] hover:border-[#C5A059] flex items-start gap-4 shadow-sm transition-all group cursor-pointer"
@@ -107,7 +107,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
                     Follow us on Instagram
                   </span>
                   <p className="text-xs text-slate-600 mt-1">
-                    Follow <strong className="text-[#002347] font-semibold">@asrealty.official</strong> for exclusive project walkthroughs and architecture highlights.
+                    Follow <strong className="text-[#002347] font-semibold">{COMPANY_DETAILS.instagramHandle}</strong> for exclusive project walkthroughs and architecture highlights.
                   </p>
                 </div>
               </a>
@@ -138,7 +138,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
                   Direct Advisory Request
                 </h3>
                 <p className="text-xs text-slate-600 mt-0.5">
-                  Pre-fills and connects to Amit Shivpeth on WhatsApp
+                  Pre-fills and connects to {COMPANY_DETAILS.founder} on WhatsApp
                 </p>
               </div>
               <span className="p-2 rounded-lg bg-[#002347] text-[#E6C687]">
@@ -215,7 +215,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
                   className="w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span>Send WhatsApp Inquiry (+91 87883 75434)</span>
+                  <span>Send WhatsApp Inquiry ({COMPANY_DETAILS.phoneDisplay})</span>
                 </button>
               </div>
 

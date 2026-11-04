@@ -1,1024 +1,18 @@
 import { Property } from '../types';
 
-import rachanaElevationImg from '../assets/images/rachana_vivantam_elevation_1790254264942.jpg';
-import rachanaInteriorImg from '../assets/images/rachana_vivantam_interior_1790254284184.jpg';
-import rachanaClubhouseImg from '../assets/images/rachana_vivantam_clubhouse_1790254302869.jpg';
-
-// Curated distinct luxury photography for each property
-export const RAW_NAGPUR_PROPERTIES = [
-  {
-    "id": 101,
-    "name": "Rachana Vivantam",
-    "location": "Seminary Hills",
-    "bhk": "3 & 4 BHK",
-    "type": "Super-Luxury High-Rise Residences",
-    "price": "₹1.79 Cr – ₹2.46 Cr",
-    "price_value": 17900000,
-    "imageUrl": rachanaElevationImg,
-    "gallery": [
-      rachanaElevationImg,
-      rachanaInteriorImg,
-      rachanaClubhouseImg,
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-    ],
-    "sqft": 2774,
-    "bathrooms": 4,
-    "isFeatured": true,
-    "possession": "Dec 2029 (Under Construction)",
-    "reraId": "PR1190002600532",
-    "features": [
-      "Prime Seminary Hills / Hazari Pahad Luxury Corridor",
-      "Expansive 6-Acre Development with 5 Iconic High-Rise Towers",
-      "75% Open-to-Sky Greens & Forest Air Vistas",
-      "Three-Sided Open Residences (Only 4 Apartments Per Floor)",
-      "MahaRERA Registered (PR1190002600532)",
-      "Developed by Renowned Rachana Construction Company"
-    ],
-    "amenities": [
-      "Grand 30,000 Sq.Ft. Luxury Clubhouse",
-      "Infinity-Edge Swimming Pool & Sunken Lounges",
-      "Fully Equipped High-Tech Gymnasium & Yoga Studio",
-      "Jogging & Strolling Track Surrounded by Landscaped Greens",
-      "Grand Banquet Hall & Private Screening Room",
-      "Multi-Tier 24/7 Gated Security & Controlled Access Parking"
-    ],
-    "description": "Rachana Vivantam in Seminary Hills (Hazari Pahad), Nagpur, is an ultra-luxury landmark residential address spanning 6 sprawling acres adjacent to Rachana Sayantara. Offering expansive 3 BHK (2,319 - 2,541 sq.ft.) and 4 BHK (2,774 - 3,198 sq.ft.) homes with three-sided open layouts, high ceilings, panoramic hill vistas, and an exquisite 30,000 sq.ft. clubhouse. Backed by AS Realty VIP advisory with direct booking benefits."
-  },
-  {
-    "id": 1,
-    "name": "Mittal Atlantis",
-    "location": "Seminary Hills",
-    "bhk": "3 & 4 BHK",
-    "type": "Luxury Flats / Penthouses",
-    "price": "₹1.71 Cr – ₹4.56 Cr",
-    "price_value": 17100000,
-    "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Landmarks Orchid Shivneri",
-    "location": "Gandhi Nagar",
-    "bhk": "3 BHK",
-    "type": "Premium Residences",
-    "price": "₹1.46 Cr – ₹1.76 Cr",
-    "price_value": 14600000,
-    "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Orchid Gokul Residences",
-    "location": "Dharampeth",
-    "bhk": "4 BHK",
-    "type": "Super-Luxury Flats",
-    "price": "₹2.55 Cr",
-    "price_value": 25500000,
-    "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Maxx Shrila Apartment",
-    "location": "Dharampeth",
-    "bhk": "3 BHK",
-    "type": "High-End Apartments",
-    "price": "₹1.95 Cr – ₹1.98 Cr",
-    "price_value": 19500000,
-    "imageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 5,
-    "name": "SDPL Om II",
-    "location": "Lakadganj",
-    "bhk": "3 & 4 BHK",
-    "type": "Luxury Residences",
-    "price": "₹1.23 Cr – ₹2.43 Cr",
-    "price_value": 12300000,
-    "imageUrl": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Maharshee Gurukrupa",
-    "location": "Laxmi Nagar",
-    "bhk": "3 BHK",
-    "type": "Executive Homes",
-    "price": "₹1.45 Cr",
-    "price_value": 14500000,
-    "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 7,
-    "name": "Civil Lines Crown Towers",
-    "location": "Civil Lines",
-    "bhk": "3 & 4 BHK",
-    "type": "Luxury Apartments",
-    "price": "Price on Request",
-    "price_value": 0,
-    "imageUrl": "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 8,
-    "name": "Ramdaspeth Elite Heights",
-    "location": "Ramdaspeth",
-    "bhk": "4 BHK",
-    "type": "Luxury Floors",
-    "price": "Price on Request",
-    "price_value": 0,
-    "imageUrl": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Golden Legacy",
-    "location": "Besa",
-    "bhk": "2 & 3 BHK",
-    "type": "Modern Homes",
-    "price": "₹55.58 L – ₹72.23 L",
-    "price_value": 5558000,
-    "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Golden Signature",
-    "location": "Besa",
-    "bhk": "2 & 3 BHK",
-    "type": "Apartments",
-    "price": "₹52.79 L – ₹73.58 L",
-    "price_value": 5279000,
-    "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 11,
-    "name": "Mahalaxmi Tattva Apas",
-    "location": "Beltarodi",
-    "bhk": "2 & 3 BHK",
-    "type": "Smart Homes",
-    "price": "₹53.00 L – ₹73.50 L",
-    "price_value": 5300000,
-    "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 12,
-    "name": "Shree Laxmi Aarambh",
-    "location": "Beltarodi",
-    "bhk": "3 BHK",
-    "type": "Premium Apartments",
-    "price": "₹70.90 L – ₹73.60 L",
-    "price_value": 7090000,
-    "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 13,
-    "name": "Skyblue Oasis",
-    "location": "Manish Nagar",
-    "bhk": "2, 3 & 4 BHK",
-    "type": "Apartments",
-    "price": "₹46.04 L – ₹67.68 L",
-    "price_value": 4604000,
-    "imageUrl": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 14,
-    "name": "Maharshee Nakshatra",
-    "location": "Manish Nagar",
-    "bhk": "2 & 3 BHK",
-    "type": "Gated Society",
-    "price": "₹57.20 L – ₹75.60 L",
-    "price_value": 5720000,
-    "imageUrl": "https://newprojects.99acres.com/projects/maharshee_builders/maharshee_nakshatra_apartment/images/963cpa7_1771415905_714889747_optOrig.jpg",
-    "gallery": [
-      "https://newprojects.99acres.com/projects/maharshee_builders/maharshee_nakshatra_apartment/images/963cpa7_1771415905_714889747_optOrig.jpg",
-      "https://newprojects.99acres.com/media/xop/2026/08/06/9/aa0pkhz_1785989852_810568261_optOrig.jpg",
-      "https://newprojects.99acres.com/media/xop/2026/08/06/9/mobile-8wnmn5u_1785989850_810568253.jpg"
-    ]
-  },
-  {
-    "id": 15,
-    "name": "Meher Ganga",
-    "location": "Narendra Nagar",
-    "bhk": "2 & 3 BHK",
-    "type": "Contemporary Flats",
-    "price": "₹59.35 L – ₹92.60 L",
-    "price_value": 5935000,
-    "imageUrl": "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 16,
-    "name": "Aakar Park Phase II",
-    "location": "Besa",
-    "bhk": "2 & 3 BHK",
-    "type": "Apartments",
-    "price": "₹42.00 L – ₹58.10 L",
-    "price_value": 4200000,
-    "imageUrl": "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 17,
-    "name": "Golden Glory 101",
-    "location": "Wardha Road",
-    "bhk": "3 & 4 BHK",
-    "type": "Row Houses & Villas",
-    "price": "₹77.83 L – ₹1.31 Cr",
-    "price_value": 7783000,
-    "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 18,
-    "name": "Radha Madhav Vrindavan",
-    "location": "Wardha Road",
-    "bhk": "1, 2 & 3 BHK",
-    "type": "Township Flats",
-    "price": "₹24.50 L – ₹78.00 L",
-    "price_value": 2450000,
-    "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 19,
-    "name": "Mahindra Bloomdale",
-    "location": "MIHAN",
-    "bhk": "1, 2 & 3 BHK",
-    "type": "Modern Flats",
-    "price": "₹36.41 L – ₹54.66 L",
-    "price_value": 3641000,
-    "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 20,
-    "name": "Om Shiv Kailasa Phase II",
-    "location": "MIHAN",
-    "bhk": "2 & 3 BHK",
-    "type": "High-Rise Apartments",
-    "price": "₹59.90 L – ₹81.05 L",
-    "price_value": 5990000,
-    "imageUrl": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 21,
-    "name": "Mahalaxmi Nagar 49 Ayana",
-    "location": "MIHAN",
-    "bhk": "Plots",
-    "type": "Residential Plot Bundles",
-    "price": "₹47.60 L – ₹2.85 Cr",
-    "price_value": 4760000,
-    "imageUrl": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1524813686514-a57563d77d66?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 22,
-    "name": "Godrej Rivershore Estate",
-    "location": "Samruddhi Expressway",
-    "bhk": "Plots",
-    "type": "Residential Land",
-    "price": "₹66.00 L – ₹2.83 Cr",
-    "price_value": 6600000,
-    "imageUrl": "https://images.unsplash.com/photo-1524813686514-a57563d77d66?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1524813686514-a57563d77d66?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 23,
-    "name": "Gokul Greens",
-    "location": "Mankapur",
-    "bhk": "2 & 3 BHK",
-    "type": "Modern Homes",
-    "price": "₹51.00 L – ₹77.01 L",
-    "price_value": 5100000,
-    "imageUrl": "https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 24,
-    "name": "SDPL Paradise",
-    "location": "Dabha",
-    "bhk": "2 BHK",
-    "type": "Value Apartments",
-    "price": "₹47.00 L – ₹57.60 L",
-    "price_value": 4700000,
-    "imageUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 25,
-    "name": "Jinraj Majestic Sky Bungalow",
-    "location": "Wardhaman Nagar",
-    "bhk": "3.5 & 4 BHK",
-    "type": "Sky Villas",
-    "price": "₹2.03 Cr – ₹2.27 Cr",
-    "price_value": 20300000,
-    "imageUrl": "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 26,
-    "name": "HOABL Nagpur Marina",
-    "location": "Hingna Road",
-    "bhk": "Plots",
-    "type": "Township Plots",
-    "price": "₹65.00 L – ₹93.49 L",
-    "price_value": 6500000,
-    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1524813686514-a57563d77d66?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 27,
-    "name": "Karamchand Greens",
-    "location": "Hingna",
-    "bhk": "Plots",
-    "type": "Residential Plots",
-    "price": "₹29.75 L – ₹67.55 L",
-    "price_value": 2975000,
-    "imageUrl": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 28,
-    "name": "Pankaj Gokul Vrindavan",
-    "location": "Friends Colony",
-    "bhk": "3 BHK",
-    "type": "Premium Apartments",
-    "price": "₹48.01 L",
-    "price_value": 4801000,
-    "imageUrl": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 29,
-    "name": "Krishna Leela",
-    "location": "Jaitala",
-    "bhk": "2 & 3 BHK",
-    "type": "Affordable Flats",
-    "price": "₹19.65 L – ₹30.66 L",
-    "price_value": 1965000,
-    "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 30,
-    "name": "SDPL Om Tatvam",
-    "location": "Kachimet",
-    "bhk": "3 & 4 BHK",
-    "type": "Residential Flats",
-    "price": "₹1.26 Cr – ₹1.27 Cr",
-    "price_value": 12600000,
-    "imageUrl": "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 31,
-    "name": "Besa Imperial Greens Plotted Enclave",
-    "location": "Besa",
-    "bhk": "Plot",
-    "type": "NMRDA Sanctioned Plots",
-    "price": "₹42.50 L – ₹88.00 L",
-    "price_value": 4250000,
-    "imageUrl": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1524813686514-a57563d77d66?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 32,
-    "name": "Wardha Horizon Plotted Township",
-    "location": "Wardha Road",
-    "bhk": "Plot",
-    "type": "Township Plots",
-    "price": "₹38.00 L – ₹75.00 L",
-    "price_value": 3800000,
-    "imageUrl": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 33,
-    "name": "Pench Agro Meadows & Orchard Estates",
-    "location": "Ramtek / Pench Corridor",
-    "bhk": "Farm / Field",
-    "type": "Agricultural Farmland & Farmhouse",
-    "price": "₹45.00 L – ₹1.25 Cr",
-    "price_value": 4500000,
-    "imageUrl": "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 34,
-    "name": "Katol Valley Greenfields & Orange Groves",
-    "location": "Katol Road",
-    "bhk": "Farm / Field",
-    "type": "Agricultural Land & Eco Farm",
-    "price": "₹35.00 L – ₹85.00 L",
-    "price_value": 3500000,
-    "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 35,
-    "name": "Umred Countryside Agro Ranch",
-    "location": "Umred Road",
-    "bhk": "Farm / Field",
-    "type": "Cultivated Farmland & Field Plots",
-    "price": "₹28.50 L – ₹62.00 L",
-    "price_value": 2850000,
-    "imageUrl": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 36,
-    "name": "Samruddhi Agri Horizons & Farm Plots",
-    "location": "Samruddhi Expressway",
-    "bhk": "Farm / Field",
-    "type": "Agro Field & Investment Land",
-    "price": "₹52.00 L – ₹1.40 Cr",
-    "price_value": 5200000,
-    "imageUrl": "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 37,
-    "name": "Hingna Forest Edge Farm Retreat",
-    "location": "Hingna",
-    "bhk": "Farm / Field",
-    "type": "Gated Weekend Farmhouse Land",
-    "price": "₹65.00 L – ₹1.10 Cr",
-    "price_value": 6500000,
-    "imageUrl": "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
-    "gallery": [
-      "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    "id": 201,
-    "name": "NP270 Shankarpur Luxury Duplex",
-    "location": "Shankarpur",
-    "bhk": "3 & 4 BHK",
-    "type": "Luxury Duplex Villas",
-    "price": "₹76.00 L – ₹1.20 Cr",
-    "price_value": 7600000,
-    "sqft": 1982,
-    "bathrooms": 4,
-    "isFeatured": true,
-    "reraId": "NP-PRJ-270",
-    "possession": "Under Construction (Possession 2026)",
-    "imageUrl": "/assets/nagpurproperty/np270_duplex_spec.png",
-    "gallery": [
-      "/assets/nagpurproperty/np270_duplex_spec.png",
-      "/assets/nagpurproperty/np270_duplex_floorplan.png",
-      "/assets/nagpurproperty/np270_duplex_amenities.png"
-    ],
-    "features": [
-      "Gated 5-Acre Enclave with 70% Open Greenery",
-      "Independent 3 & 4 BHK Duplex Architecture",
-      "Semi-Furnished Interior with Premium Vitrified Tiling",
-      "Just 2 km to Metro & Shankarpur Junction"
-    ],
-    "amenities": [
-      "Private 2-Car Covered Portico",
-      "Clubhouse, Swimming Pool & Kids Play Lawn",
-      "Borewell & 24/7 Municipal Corporation Water",
-      "Gated Security Post & 24/7 CCTV Monitoring"
-    ],
-    "description": "Featured on nagpurproperty.com under Project ID NP270, this premium 5-acre residential community in Shankarpur features 101 exclusive duplex villas. Boasting 70% open green space, private car parking, expansive living rooms, and proximity to Wardha Road and MIHAN corridor."
-  },
-  {
-    "id": 202,
-    "name": "NP335 Besa Pipla Grand Estate",
-    "location": "Besa",
-    "bhk": "Plot",
-    "type": "Sanctioned Plotted Township",
-    "price": "₹63.00 L – ₹1.10 Cr",
-    "price_value": 6300000,
-    "sqft": 2400,
-    "bathrooms": 0,
-    "isFeatured": true,
-    "reraId": "NP-PRJ-335",
-    "possession": "New Launch / Immediate Registry",
-    "imageUrl": "/assets/nagpurproperty/np335_besa_cover.png",
-    "gallery": [
-      "/assets/nagpurproperty/np335_besa_cover.png",
-      "/assets/nagpurproperty/np335_besa_spec.jpg",
-      "/assets/nagpurproperty/np335_besa_floorplan.jpg"
-    ],
-    "features": [
-      "17-Acre Mega Sanctioned Township on Besa Pipla Road",
-      "RL Sanctioned Layout with Individual 7/12 & PR Card",
-      "Underground Stormwater Drainage & Electrification",
-      "Prime Corner & Garden Facing Plotted Parcels"
-    ],
-    "amenities": [
-      "40-ft Asphalt Avenues with LED Illumination",
-      "Landscaped Central Theme Garden & Jogging Track",
-      "24/7 Monitored Access with Guard Outpost",
-      "Borewell & Dedicated Overhead Water Distribution"
-    ],
-    "description": "Directly curated from nagpurproperty.com (NP335), this 17-acre grand layout is situated on prominent Besa Pipla Road in South Nagpur. Featuring fully-demarcated sanctioned plots with complete underground infrastructure, club amenities, and immediate construction permission."
-  },
-  {
-    "id": 203,
-    "name": "NP267 Besa Residency & Penthouses",
-    "location": "Besa",
-    "bhk": "3 BHK",
-    "type": "Flats & Duplex Residences",
-    "price": "₹53.00 L – ₹1.85 Cr",
-    "price_value": 5300000,
-    "sqft": 1850,
-    "bathrooms": 3,
-    "isFeatured": false,
-    "reraId": "NP-PRJ-267",
-    "possession": "Under Construction",
-    "imageUrl": "/assets/nagpurproperty/np267_besa_cover.png",
-    "gallery": [
-      "/assets/nagpurproperty/np267_besa_cover.png",
-      "/assets/nagpurproperty/np267_besa_amenities.png",
-      "/assets/nagpurproperty/np_land_5484_ghogali.png"
-    ],
-    "features": [
-      "Sprawling 10-Acre Campus with 80% Open Skies",
-      "Vastu-Compliant 2 & 3 BHK Flats and Duplex Units",
-      "Grand Balconies Overlooking Pool & Central Lawns",
-      "Approved for Home Loans by Leading National Banks"
-    ],
-    "amenities": [
-      "Swimming Pool, Sundeck & Clubhouse",
-      "1 to 4 Reserved Car Parking Slots",
-      "100% Generator Backup for Elevators & Common Zones",
-      "Multi-Level Security & Fire Safety Infrastructure"
-    ],
-    "description": "Sourced from nagpurproperty.com (NP267), this landmark 10-acre residential enclave in Besa provides an elevated lifestyle with 80% open recreational space. Offering thoughtfully designed residences ranging from 850 to 3,600 sq.ft. with resort amenities and rapid city connectivity."
-  },
-  {
-    "id": 204,
-    "name": "NP254 Besa Pipla Modern Heights",
-    "location": "Besa",
-    "bhk": "2 BHK",
-    "type": "Modern High-Rise Flats",
-    "price": "₹30.00 L – ₹45.00 L",
-    "price_value": 3000000,
-    "sqft": 1150,
-    "bathrooms": 2,
-    "isFeatured": false,
-    "reraId": "NP-PRJ-254",
-    "possession": "Under Construction (14 Floors)",
-    "imageUrl": "/assets/nagpurproperty/np254_besa_cover.png",
-    "gallery": [
-      "/assets/nagpurproperty/np254_besa_cover.png",
-      "/assets/nagpurproperty/np254_besa_spec.png",
-      "/assets/nagpurproperty/np254_besa_amenities.png"
-    ],
-    "features": [
-      "14-Storey Architectural Tower on Besa-Pipla Corridor",
-      "Optimized 2 BHK Layouts with Cross Ventilation",
-      "70% Open Space & High-Speed Elevators with ARD",
-      "State Bank of India Pre-Approved Project"
-    ],
-    "amenities": [
-      "2 Reserved Covered Car Parking Spaces",
-      "Children's Play Yard & Elder Seating Gazebo",
-      "Rainwater Harvesting System & 24/7 Security",
-      "Overlooking Landscaped Club & Garden"
-    ],
-    "description": "Listed on nagpurproperty.com (NP254), this stylish 14-storey high-rise development on Besa Pipla Road brings modern urban living at an accessible price point. Features 300 modern units set across 4 acres with 70% open landscaped grounds."
-  },
-  {
-    "id": 205,
-    "name": "NP389 Aarohan Greens Jamtha",
-    "location": "Jamtha",
-    "bhk": "Plot",
-    "type": "NMRDA Sanctioned Layout Plots",
-    "price": "₹45.00 L – ₹78.00 L",
-    "price_value": 4500000,
-    "sqft": 1800,
-    "bathrooms": 0,
-    "isFeatured": false,
-    "reraId": "NP-PRJ-389",
-    "possession": "Possession by Nov 2025",
-    "imageUrl": "/assets/nagpurproperty/np389_jamtha_cover.jpg",
-    "gallery": [
-      "/assets/nagpurproperty/np389_jamtha_cover.jpg",
-      "/assets/nagpurproperty/np_land_5496_outer_ring.png",
-      "/assets/nagpurproperty/np_land_5471_new_manish.png"
-    ],
-    "features": [
-      "Aarohan Saraswati Infra Sanctioned Layout in Jamtha",
-      "Near VCA International Stadium & Wardha Road Expressway",
-      "RL Sanctioned Ready for Immediate Construction",
-      "High Capital Growth Belt Adjoining MIHAN SEZ"
-    ],
-    "amenities": [
-      "Concrete Internal Roads with Underground Drainage",
-      "Avenue Plantations & Landscaped Community Park",
-      "Underground Electric Connections to Plot Edges",
-      "Grand Entrance Gate & Gated Boundary"
-    ],
-    "description": "Featured on nagpurproperty.com under Project NP389, Aarohan Greens in Jamtha presents high-growth NMRDA-sanctioned plots located in close proximity to the VCA Stadium and Wardha Road corridor. Perfect for custom bungalow creation and land appreciation."
-  },
-  {
-    "id": 206,
-    "name": "NP356 Besa Parkview Residency",
-    "location": "Besa",
-    "bhk": "2 BHK",
-    "type": "Parkview Gated Residences",
-    "price": "₹42.00 L – ₹52.00 L",
-    "price_value": 4200000,
-    "sqft": 1050,
-    "bathrooms": 2,
-    "isFeatured": false,
-    "reraId": "NP-PRJ-356",
-    "possession": "Under Construction / Nearing Possession",
-    "imageUrl": "/assets/nagpurproperty/np356_besa_cover.png",
-    "gallery": [
-      "/assets/nagpurproperty/np356_besa_cover.png",
-      "/assets/nagpurproperty/np_land_5477_madhav_nagar.png",
-      "/assets/nagpurproperty/np267_besa_cover.png"
-    ],
-    "features": [
-      "Boutique Low-Density Gated Campus (Only 56 Residences)",
-      "8 Elegant G+7 Residential Wings with Garden Views",
-      "Just 1.5 km to Metro Station & Renowned Schools",
-      "Full OC & CC Approvals with Freehold Title"
-    ],
-    "amenities": [
-      "Reserved Covered Stilt Car Parking",
-      "Tranquil Central Park with Walking Trails",
-      "Municipal Water Connection & Silent Generator Backup",
-      "24/7 Security Booth with CCTV Monitoring"
-    ],
-    "description": "Sourced from nagpurproperty.com (NP356), this peaceful 2-acre gated enclave in Besa comprises 8 low-rise wings housing only 56 privileged families. Offers well-lit park-facing 2 BHK residences with OC/CC certifications and immediate handover readiness."
-  },
-  {
-    "id": 207,
-    "name": "NP5495 Gotal Pajri Sanctioned Plot",
-    "location": "Gotal Pajri",
-    "bhk": "Plot",
-    "type": "Sanctioned Residential Plot",
-    "price": "₹62.00 L",
-    "price_value": 6200000,
-    "sqft": 1570,
-    "bathrooms": 0,
-    "isFeatured": false,
-    "reraId": "NP-LAND-5495",
-    "possession": "Immediate Registry & Construction",
-    "imageUrl": "/assets/nagpurproperty/np_land_5495_gotal_pajri.jpg",
-    "gallery": [
-      "/assets/nagpurproperty/np_land_5495_gotal_pajri.jpg",
-      "/assets/nagpurproperty/np_land_5484_ghogali.png",
-      "/assets/nagpurproperty/np_land_5496_outer_ring.png"
-    ],
-    "features": [
-      "1,570 Sq.Ft. Sanctioned Residential Plot in Gotal Pajri",
-      "Clear RL & 7/12 Documentations for Immediate Registry",
-      "Direct Wide Asphalt Road Access with Avenue Streetlights",
-      "Nestled in High-Demand South Nagpur Residential Sector"
-    ],
-    "amenities": [
-      "Concrete Drainage Network & Water Lines Ready",
-      "Demarcated Boundary Stones on All Sides",
-      "Immediate Electricity Connection Available",
-      "Rapid Connectivity to Besa Square and Outer Ring Road"
-    ],
-    "description": "Verified plot listing directly from nagpurproperty.com (Listing ID 5495). Situated in Gotal Pajri near Besa, this 1,570 sq.ft. sanctioned plot is ready for custom independent bungalow construction with clean legal titles and full infrastructure."
-  },
-  {
-    "id": 208,
-    "name": "NP5482 Jaywant Nagar Prime Estate Plot",
-    "location": "Jaywant Nagar",
-    "bhk": "Plot",
-    "type": "Prime City Bungalow Plot",
-    "price": "₹2.58 Cr",
-    "price_value": 25800000,
-    "sqft": 4300,
-    "bathrooms": 0,
-    "isFeatured": true,
-    "reraId": "NP-LAND-5482",
-    "possession": "Immediate Possession",
-    "imageUrl": "/assets/nagpurproperty/np_land_5482_jaywant_nagar.jpg",
-    "gallery": [
-      "/assets/nagpurproperty/np_land_5482_jaywant_nagar.jpg",
-      "/assets/nagpurproperty/np_land_5477_madhav_nagar.png",
-      "/assets/nagpurproperty/np_land_5471_new_manish.png"
-    ],
-    "features": [
-      "Sprawling 4,300 Sq.Ft. Landmark Parcel in Jaywant Nagar",
-      "Dual-Road Corner Frontage Ideal for Luxury Mansion",
-      "Established High-End Residential Neighborhood",
-      "100% Clear Freehold Title with Municipal Approvals"
-    ],
-    "amenities": [
-      "Municipal Water Supply & Deep Groundwater Borewell",
-      "3-Phase Power Grid Connection",
-      "Wide Paved Roads & Streetlights",
-      "Safe, Secure, and Tranquil VIP Enclave"
-    ],
-    "description": "Featured on nagpurproperty.com under ID 5482, this sprawling 4,300 sq.ft. corner plot in Jaywant Nagar offers an exceptional canvas for constructing an independent private villa or family estate in one of Nagpur's most reputable residential districts."
-  }
-];
-
-// Helper to determine estimated square footage and details based on bhk/type
-function getPropertyDetails(raw: typeof RAW_NAGPUR_PROPERTIES[0]) {
-  const bhkLower = (raw.bhk || '').toLowerCase();
-  const typeLower = (raw.type || '').toLowerCase();
-
-  const isFarmField =
-    bhkLower.includes('farm') ||
-    bhkLower.includes('field') ||
-    typeLower.includes('farm') ||
-    typeLower.includes('field') ||
-    typeLower.includes('agro') ||
-    typeLower.includes('agri');
-
-  const isPlot =
-    !isFarmField &&
-    (bhkLower.includes('plot') || typeLower.includes('plot') || typeLower.includes('land'));
-
-  let sqft = 1450;
-  let bathrooms = 3;
-
-  if (isFarmField) {
-    sqft = 43560; // 1 Acre (43,560 sq ft)
-    bathrooms = 0;
-  } else if (isPlot) {
-    sqft = 2200;
-    bathrooms = 0;
-  } else if (raw.bhk.includes('4')) {
-    sqft = 2850;
-    bathrooms = 4;
-  } else if (raw.bhk.includes('3')) {
-    sqft = 1650;
-    bathrooms = 3;
-  } else if (raw.bhk.includes('2')) {
-    sqft = 1100;
-    bathrooms = 2;
-  } else if (raw.bhk.includes('1')) {
-    sqft = 650;
-    bathrooms = 1;
-  }
-
-  const isLuxury = raw.price_value >= 15000000 || raw.price.includes('Request');
-
-  if (isFarmField) {
-    return {
-      sqft,
-      bathrooms,
-      isFeatured: raw.price_value >= 4500000,
-      features: [
-        'Clear 7/12 & 8A Land Title Extract',
-        'Direct Tar Road Connectivity',
-        'Abundant Sweet Groundwater & Borewell Ready',
-        'Fenced Boundary with Private Gated Access',
-      ],
-      amenities: [
-        'Tree Plantation & Fruit Orchard Ready',
-        'Electricity Line & Transformer Proximity',
-        '24/7 Caretaker & Security Outpost',
-        'Scenic Countryside & Nature Backdrop',
-      ],
-      reraId: `AGRI-NAG-${1000 + raw.id}`,
-      possession: 'Immediate Registry / Clear Title',
-      description: `${raw.name} is an exquisite ${raw.type} situated in the lush ${raw.location} green belt near Nagpur. Boasting clear 7/12 titles, fertile soil, perimeter fencing, and tranquil natural vistas, it is primed for luxury farmhouses, organic farming, or generational land banking.`
-    };
-  }
-
-  if (isPlot) {
-    return {
-      sqft,
-      bathrooms,
-      isFeatured: [21, 22, 31].includes(raw.id),
-      features: [
-        'NMRDA & RL Sanctioned Layout',
-        'Clear Title with Immediate Registry',
-        'Wide Asphalt Internal Roads (30-40 ft)',
-        'Underground Drainage, Water & Electric Cables',
-      ],
-      amenities: [
-        'Gated Enclave with Guard Post & CCTV',
-        'Demarcated Concrete Boundary Stones',
-        'Landscaped Central Park & Jogging Track',
-        'Streetlighting & Avenue Plantation',
-      ],
-      reraId: `P505000${26000 + raw.id}`,
-      possession: 'Ready for Immediate Construction',
-      description: `${raw.name} offers premium sanctioned plotted parcels in fast-developing ${raw.location}, Nagpur. Ideal for building custom luxury bungalows with complete infrastructure readiness and guaranteed legal title clearance.`
-    };
-  }
-
-  return {
-    sqft,
-    bathrooms,
-    isFeatured: isLuxury || [1, 3, 7, 8, 17, 25].includes(raw.id),
-    features: [
-      'Prime Nagpur Connectivity',
-      'MahaRERA Registered Project',
-      'Vastu Compliant Architecture',
-      '24/7 Security & High-Speed Elevators',
-    ],
-    amenities: [
-      'Dedicated Reserved Car Parking',
-      'Landscaped Green Enclaves',
-      'CCTV & Gated Security Protocol',
-      '100% Power Backup for Common Areas',
-    ],
-    reraId: `P505000${25000 + raw.id}`,
-    possession: raw.price_value > 20000000 ? 'Ready to Move' : 'Ready / Nearing Possession',
-    description: `${raw.name} is a distinguished ${raw.type} development located in prime ${raw.location}, Nagpur. Offering meticulously planned ${raw.bhk} configurations with superior fittings, abundant natural ventilation, and seamless connectivity to prime city corridors.`
-  };
-}
-
-export const PROPERTIES: Property[] = RAW_NAGPUR_PROPERTIES.map((item: any) => {
-  const defaultDetails = getPropertyDetails(item);
-  return {
-    id: item.id,
-    name: item.name,
-    title: item.name,
-    subtitle: `${item.type} in ${item.location}, Nagpur`,
-    location: item.location,
-    locality: item.location,
-    city: 'Nagpur',
-    bhk: item.bhk,
-    type: item.type,
-    price: item.price,
-    price_value: item.price_value,
-    imageUrl: item.imageUrl,
-    heroImage: item.imageUrl,
-    gallery: item.gallery && item.gallery.length > 0 ? item.gallery : [
-      item.imageUrl,
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80',
-    ],
-    ...defaultDetails,
-    // Preserve custom overrides if supplied on the item
-    ...(item.sqft ? { sqft: item.sqft } : {}),
-    ...(item.bathrooms ? { bathrooms: item.bathrooms } : {}),
-    ...(item.isFeatured !== undefined ? { isFeatured: item.isFeatured } : {}),
-    ...(item.reraId ? { reraId: item.reraId } : {}),
-    ...(item.possession ? { possession: item.possession } : {}),
-    ...(item.features ? { features: item.features } : {}),
-    ...(item.amenities ? { amenities: item.amenities } : {}),
-    ...(item.description ? { description: item.description } : {}),
-  };
-});
-
 export const COMPANY_DETAILS = {
-  name: 'AS Realty',
-  tagline: 'Nagpur’s Premier Real Estate Advisory',
-  founder: 'Amit Shivpeth',
+  name: 'Nagpur Acres',
+  tagline: 'Nagpur’s Premier Land & Farmhouse Advisory',
+  founder: 'Aditya Shivpeth',
   title: 'Founder & Managing Director',
-  phoneDisplay: '+91 87883 75434',
-  whatsappNumber: '918788375434',
-  email: 'concierge@asrealty.in',
-  instagramUrl: 'https://www.instagram.com/asrealty.official?igsi=MXhteGNhM3Y0YjBmcg==',
-  instagramHandle: '@asrealty.official',
+  logoUrl:
+    'https://instagram.fnag12-1.fna.fbcdn.net/v/t51.82787-19/849772942_18066479072784641_7951094449264636477_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ig_cache_key=GI6BpjIBsXnzXS9AAD2y-19G9ldubmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=7XWzhGnOc-AQ7kNvwFP_bQk&_nc_oc=Adp4dSPwLXFUDiQBzmmliDZmmzOUIlJuu28E_HY1H69Rb0w1FLBcssnT9lCbKAw15JY&_nc_zt=24&_nc_ht=instagram.fnag12-1.fna&_nc_gid=2uTs6mB7Yq5Jv498WI0JfA&_nc_ss=7baaf&oh=00_AQRQSFXYt97NHctEeh3VxBTBrlUJOYPXrRPUe6ia2-wIYw&oe=6AEFEF75',
+  phoneDisplay: '+91 87677 82263',
+  whatsappNumber: '918767782263',
+  email: 'concierge@nagpuracres.in',
+  instagramUrl:
+    'https://www.instagram.com/nagpur.acres?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==',
+  instagramHandle: '@nagpur.acres',
   city: 'Nagpur',
   offices: [
     {
@@ -1031,3 +25,383 @@ export const COMPANY_DETAILS = {
     },
   ],
 };
+
+// Complete list of all 7 verified properties arranged professionally
+export const PROPERTIES: Property[] = [
+  {
+    id: '01',
+    propertyNumber: '01',
+    name: 'PROPERTY 01',
+    title: 'PROPERTY 01 — 5 Acres Agricultural Land',
+    subtitle: '5 Acres prime agricultural land situated 32 KM from Nagpur',
+    status: 'Available',
+    ratePerAcre: '₹18 Lakh / Acre',
+    rateValue: 1800000,
+    totalLand: '5 Acres',
+    areaDisplay: '5 Acres',
+    totalPrice: '₹90 Lakh',
+    totalPriceShort: '₹90 Lakh',
+    location: '32 KM from Nagpur',
+    distanceKm: 32,
+    type: 'Agricultural Land',
+    price: '₹18 Lakh / Acre',
+    price_value: 9000000,
+    bhk: '5 Acres',
+    sqft: 217800, // 5 * 43560 sq ft
+    bathrooms: 0,
+    isFeatured: true,
+    reraId: 'AGRI-NAG-001',
+    possession: 'Immediate Registry / Clear Title',
+    imageUrl:
+      'https://user51559.na.imgto.link/public/20261104/547fa71fa7ff25f61f282380-whatsapp-image-2026-11-04-at-6-52-02-pm.avif',
+    heroImage:
+      'https://user51559.na.imgto.link/public/20261104/547fa71fa7ff25f61f282380-whatsapp-image-2026-11-04-at-6-52-02-pm.avif',
+    gallery: [
+      'https://user51559.na.imgto.link/public/20261104/547fa71fa7ff25f61f282380-whatsapp-image-2026-11-04-at-6-52-02-pm.avif',
+    ],
+    features: [
+      'Total Land: 5 Acres Contiguous Parcel',
+      'Total Price: ₹90 Lakh (₹18 Lakh / Acre)',
+      'Location: 32 KM from Nagpur City',
+      'Clear 7/12 & 8A Title Documentation',
+      'Direct Wide Tar Road Access & Perimeter Demarcation',
+      'Sweet Groundwater Zone with Borewell Viability',
+    ],
+    amenities: [
+      'Direct Tar Road Frontage',
+      'Perimeter Demarcated Boundary',
+      'High Agricultural Soil Fertility',
+      'Suitable for Organic Farming or Farmhouse Estate',
+      'Electric Line Connectivity in Close Vicinity',
+      'Immediate Freehold Registration Readiness',
+    ],
+    description:
+      'PROPERTY 01 is an expansive 5-acre agricultural land holding located just 32 KM from Nagpur. Offered at ₹18 Lakh / Acre with a total investment outlay of ₹90 Lakh, this verified parcel boasts clear 7/12 land titles, excellent vehicular connectivity, and high agricultural soil fertility. Ideal for weekend farmhouse developments, orchards, or long-term agricultural land banking under Nagpur Acres advisory.',
+  },
+  {
+    id: '02',
+    propertyNumber: '02',
+    name: 'PROPERTY 02',
+    title: 'PROPERTY 02 — 6.67 Acres Lake Touch Property 🌊',
+    subtitle: 'Direct water-frontage lake touch acreage 60 KM from Nagpur',
+    status: 'Available',
+    ratePerAcre: '₹19 Lakh / Acre',
+    rateValue: 1900000,
+    totalLand: '6.67 Acres',
+    areaDisplay: '6.67 Acres',
+    totalPrice: '₹1.2663 Crore',
+    totalPriceShort: '₹1.2663 Cr',
+    location: '60 KM from Nagpur',
+    distanceKm: 60,
+    type: 'Lake Touch Property 🌊',
+    specialFeature: 'Lake Touch Property 🌊',
+    price: '₹19 Lakh / Acre',
+    price_value: 12663000,
+    bhk: '6.67 Acres',
+    sqft: 290545, // 6.67 * 43560 sq ft
+    bathrooms: 0,
+    isFeatured: true,
+    reraId: 'AGRI-NAG-002',
+    possession: 'Immediate Registry / Clear Title',
+    imageUrl:
+      'https://user51559.na.imgto.link/public/20261104/4a1a572374b2082031085839-whatsapp-image-2026-11-04-at-6-52-04-pm-2.avif',
+    heroImage:
+      'https://user51559.na.imgto.link/public/20261104/4a1a572374b2082031085839-whatsapp-image-2026-11-04-at-6-52-04-pm-2.avif',
+    gallery: [
+      'https://user51559.na.imgto.link/public/20261104/4a1a572374b2082031085839-whatsapp-image-2026-11-04-at-6-52-04-pm-2.avif',
+      'https://user51559.na.imgto.link/public/20261104/547fa71fa7ff25f61f282380-whatsapp-image-2026-11-04-at-6-52-02-pm.avif',
+    ],
+    features: [
+      'Special Feature: Lake Touch Property 🌊',
+      'Total Land: 6.67 Acres Contiguous Waterfront Estate',
+      'Total Price: ₹1.2663 Crore (₹19 Lakh / Acre)',
+      'Location: 60 KM from Nagpur in Scenic Valley',
+      'Spectacular Panoramic Lake Shoreline Frontage',
+      'High Potential for Eco-Resort, Wellness Retreat, or Private Villa Sanctuary',
+    ],
+    amenities: [
+      'Direct Waterfront & Scenic Lake Access',
+      'Unobstructed Panoramic Water & Sunset Vistas',
+      'Private Approach Road & Clean Boundary Survey',
+      'Year-Round Abundant Water Availability',
+      'Pollution-Free Microclimate & Lush Green Flora',
+      'Clear Legal Title & 100% Freehold Ownership',
+    ],
+    description:
+      'PROPERTY 02 is a crown jewel 6.67-acre lake-touch trophy estate located 60 KM from Nagpur. Priced at ₹19 Lakh / Acre with a total package of ₹1.2663 Crore, this rare property directly touches scenic natural waters, offering an unmatched setting for an ultra-luxury private lake retreat, wellness sanctuary, or high-end eco-resort with complete legal verification by Aditya Shivpeth.',
+  },
+  {
+    id: '03',
+    propertyNumber: '03',
+    name: 'PROPERTY 03',
+    title: 'PROPERTY 03 — 1.75 Acres Agricultural Land',
+    subtitle: 'Compact 1.75 Acres agricultural holding 32 KM from Nagpur',
+    status: 'Available',
+    ratePerAcre: '₹25 Lakh / Acre',
+    rateValue: 2500000,
+    totalLand: '1.75 Acres',
+    areaDisplay: '1.75 Acres',
+    totalPrice: '₹43.75 Lakh',
+    totalPriceShort: '₹43.75 Lakh',
+    location: '32 KM from Nagpur',
+    distanceKm: 32,
+    type: 'Agricultural Land',
+    price: '₹25 Lakh / Acre',
+    price_value: 4375000,
+    bhk: '1.75 Acres',
+    sqft: 76230, // 1.75 * 43560 sq ft
+    bathrooms: 0,
+    isFeatured: false,
+    reraId: 'AGRI-NAG-003',
+    possession: 'Immediate Registry / Clear Title',
+    imageUrl:
+      'https://user51559.na.imgto.link/public/20261104/93db3276da87bd78e26f27ee-whatsapp-image-2026-11-04-at-6-59-32-pm-1.avif',
+    heroImage:
+      'https://user51559.na.imgto.link/public/20261104/93db3276da87bd78e26f27ee-whatsapp-image-2026-11-04-at-6-59-32-pm-1.avif',
+    gallery: [
+      'https://user51559.na.imgto.link/public/20261104/93db3276da87bd78e26f27ee-whatsapp-image-2026-11-04-at-6-59-32-pm-1.avif',
+    ],
+    features: [
+      'Total Land: 1.75 Acres',
+      'Total Price: ₹43.75 Lakh (₹25 Lakh / Acre)',
+      'Location: 32 KM from Nagpur',
+      'Type: Agricultural Land with Rich Soil',
+      'Compact & Manageable Farmhouse Scale',
+      'Convenient Highway Proximity & Quick Travel Time',
+    ],
+    amenities: [
+      'Paved Road Access to Parcel Frontage',
+      'Clear Title & 7/12 Land Registry Ready',
+      'Groundwater Potential for Borewell Installation',
+      'Ideal for Weekend Family Farmhouse',
+      'Low Maintenance & High Capital Appreciation',
+      'Surrounded by Tranquil Green Belts',
+    ],
+    description:
+      'PROPERTY 03 offers a highly desirable 1.75-acre parcel positioned 32 KM from Nagpur. Listed at ₹25 Lakh / Acre for a total outlay of ₹43.75 Lakh, this manageable acreage is perfectly proportioned for city professionals seeking an accessible weekend farmhouse, organic kitchen garden, or rewarding land investment without heavy maintenance overheads.',
+  },
+  {
+    id: '04',
+    propertyNumber: '04',
+    name: 'PROPERTY 04',
+    title: 'PROPERTY 04 — Flexible Land Availability',
+    subtitle: 'Customizable land area tailored to buyer’s specific requirements 30 KM from Nagpur',
+    status: 'Available',
+    ratePerAcre: '₹28 Lakh / Acre',
+    rateValue: 2800000,
+    totalLand: "As per buyer's requirement",
+    areaDisplay: 'Flexible',
+    totalPrice: 'Depends on land area',
+    totalPriceShort: 'Depends on area',
+    location: '30 KM from Nagpur',
+    distanceKm: 30,
+    type: 'Flexible Land Availability',
+    specialFeature: 'Flexible Land Availability',
+    price: '₹28 Lakh / Acre',
+    price_value: 0,
+    bhk: 'Flexible Land',
+    sqft: 43560,
+    bathrooms: 0,
+    isFeatured: true,
+    reraId: 'AGRI-NAG-004',
+    possession: 'Immediate Demarcation & Registry',
+    imageUrl:
+      'https://user51559.na.imgto.link/public/20261104/e269b2766495fdc81b7dcb41-whatsapp-image-2026-11-04-at-6-52-09-pm.avif',
+    heroImage:
+      'https://user51559.na.imgto.link/public/20261104/e269b2766495fdc81b7dcb41-whatsapp-image-2026-11-04-at-6-52-09-pm.avif',
+    gallery: [
+      'https://user51559.na.imgto.link/public/20261104/e269b2766495fdc81b7dcb41-whatsapp-image-2026-11-04-at-6-52-09-pm.avif',
+    ],
+    features: [
+      'Special Feature: Flexible Land Availability',
+      'Rate: ₹28 Lakh / Acre',
+      'Total Land: As per buyer’s requirement (Modular Demarcation)',
+      'Total Price: Depends on land area selected',
+      'Location: 30 KM from Nagpur (Fast 35-min Drive)',
+      'Custom Plot Sizing from 1 Acre upwards',
+    ],
+    amenities: [
+      'Customized Demarcation & Boundary Fencing',
+      'Wide Internal Motorway Access',
+      'Clear Independent Title Documentation for Allocated Acreage',
+      'Electricity & Water Infrastructure Readiness',
+      'Ideal for Tailored Agri-Projects or Private Estates',
+      'Direct Support from Aditya Shivpeth for Custom Subdivisions',
+    ],
+    description:
+      'PROPERTY 04 introduces flexible land acreage located just 30 KM from Nagpur. Fixed at ₹28 Lakh / Acre, the total acquisition cost adapts precisely to the land extent required by the buyer—whether 1 acre, 2 acres, or larger contiguous blocks. Featuring clean title deeds and prompt legal demarcation.',
+  },
+  {
+    id: '05',
+    propertyNumber: '05',
+    name: 'PROPERTY 05',
+    title: 'PROPERTY 05 — 2.92 Acres Agricultural Land',
+    subtitle: '2.92 Acres fertile agricultural farmland 57 KM from Nagpur',
+    status: 'Available',
+    ratePerAcre: '₹32 Lakh / Acre',
+    rateValue: 3200000,
+    totalLand: '2.92 Acres',
+    areaDisplay: '2.92 Acres',
+    totalPrice: '₹93.44 Lakh',
+    totalPriceShort: '₹93.44 Lakh',
+    location: '57 KM from Nagpur',
+    distanceKm: 57,
+    type: 'Agricultural Land',
+    price: '₹32 Lakh / Acre',
+    price_value: 9344000,
+    bhk: '2.92 Acres',
+    sqft: 127195, // 2.92 * 43560 sq ft
+    bathrooms: 0,
+    isFeatured: false,
+    reraId: 'AGRI-NAG-005',
+    possession: 'Immediate Registry / Clear Title',
+    imageUrl:
+      'https://user51559.na.imgto.link/public/20261104/f8429ae5218fb9b62d70f472-whatsapp-image-2026-11-04-at-7-00-22-pm.avif',
+    heroImage:
+      'https://user51559.na.imgto.link/public/20261104/f8429ae5218fb9b62d70f472-whatsapp-image-2026-11-04-at-7-00-22-pm.avif',
+    gallery: [
+      'https://user51559.na.imgto.link/public/20261104/f8429ae5218fb9b62d70f472-whatsapp-image-2026-11-04-at-7-00-22-pm.avif',
+      'https://user51559.na.imgto.link/public/20261104/eaa5f7a74cf78095d58a6c33-whatsapp-image-2026-11-04-at-7-00-22-pm-1.avif',
+    ],
+    features: [
+      'Total Land: 2.92 Acres High-Yield Parcel',
+      'Total Price: ₹93.44 Lakh (₹32 Lakh / Acre)',
+      'Location: 57 KM from Nagpur',
+      'Type: Agricultural Land with Rich Black Soil',
+      'Outstanding Groundwater & Natural Irrigation Capability',
+      'Clear 7/12 Title & Peaceful Countryside Setting',
+    ],
+    amenities: [
+      'Dedicated Approach Road with Vehicle Turning Access',
+      'Fertile Cultivated Land Bed Ready for Immediate Sowing',
+      'Clear Title Documents with Registered Pedigree',
+      'Natural Green Tree Canopy along Perimeters',
+      'Reliable Power Grid Access Nearby',
+      'Full Transaction Assistance by Nagpur Acres',
+    ],
+    description:
+      'PROPERTY 05 is a premium 2.92-acre agricultural land holding 57 KM from Nagpur. Offered at ₹32 Lakh / Acre for a total investment of ₹93.44 Lakh, this fertile parcel features high soil productivity, reliable water table access, and peaceful countryside surroundings ideal for horticulture, organic farming, or an expansive country farmhouse.',
+  },
+  {
+    id: '06',
+    propertyNumber: '06',
+    name: 'PROPERTY 06',
+    title: 'PROPERTY 06 — Highway Touch Land 🛣️',
+    subtitle: 'Prime Highway Touch commercial & agricultural corridor Near Saoner Road, 47 KM from Nagpur',
+    status: 'Available',
+    ratePerAcre: 'Approx. ₹1.03 Crore / Acre',
+    rateValue: 10300000,
+    totalLand: '1.75 Acres',
+    areaDisplay: '1.75 Acres',
+    totalPrice: '₹1.80 Crore Total',
+    totalPriceShort: '₹1.80 Cr',
+    location: 'Near Saoner Road, 47 KM from Nagpur',
+    distanceKm: 47,
+    type: 'Highway Touch Land 🛣️',
+    specialFeature: 'Highway Touch Land 🛣️',
+    price: '₹1.80 Crore Total',
+    price_value: 18000000,
+    bhk: '1.75 Acres',
+    sqft: 76230, // 1.75 * 43560 sq ft
+    bathrooms: 0,
+    isFeatured: true,
+    reraId: 'AGRI-NAG-006',
+    possession: 'Immediate Registry / Clear Title',
+    imageUrl:
+      'https://user51559.na.imgto.link/public/20261104/b76fc0b786299ddd3b5ffe8d-whatsapp-image-2026-11-04-at-6-52-10-pm-1.avif',
+    heroImage:
+      'https://user51559.na.imgto.link/public/20261104/b76fc0b786299ddd3b5ffe8d-whatsapp-image-2026-11-04-at-6-52-10-pm-1.avif',
+    gallery: [
+      'https://user51559.na.imgto.link/public/20261104/b76fc0b786299ddd3b5ffe8d-whatsapp-image-2026-11-04-at-6-52-10-pm-1.avif',
+      'https://user51559.na.imgto.link/public/20261104/5ea173556bfff92e0be3a65f-whatsapp-image-2026-11-04-at-6-52-10-pm.avif',
+    ],
+    features: [
+      'Special Feature: Highway Touch Land 🛣️',
+      'Total Price: ₹1.80 Crore Total',
+      'Approx. Price: ₹1.03 Crore / Acre',
+      'Total Land: 1.75 Acres',
+      'Location: Near Saoner Road, 47 KM from Nagpur',
+      'High Frontage Commercial & Agro-Industrial Potential',
+    ],
+    amenities: [
+      'Direct Wide National / State Highway Frontage',
+      'Heavy Commercial Vehicle Access & High Footfall Corridor',
+      'High Capital Appreciation & Commercial Utility Belt',
+      'Heavy-Duty Electricity & Municipal Infrastructure Proximity',
+      'Clean Commercial & Land Registry Clearances',
+      'Prime Visibility along Saoner Road Arterial Highway',
+    ],
+    description:
+      'PROPERTY 06 is a high-value 1.75-acre Highway Touch landmark property situated along the prominent Saoner Road corridor, 47 KM from Nagpur. Offered at ₹1.80 Crore Total (approx. ₹1.03 Crore / Acre), this rare highway-frontage asset delivers outstanding commercial, hospitality, logistics, or luxury farm estate potential with high capital velocity.',
+  },
+  {
+    id: '07',
+    propertyNumber: '07',
+    name: 'PROPERTY 07',
+    title: 'PROPERTY 07 — 1.75 Acres Agricultural Land',
+    subtitle: 'Attractive value 1.75 Acres agricultural holding 30 KM from Nagpur',
+    status: 'Available',
+    ratePerAcre: '₹24 Lakh / Acre',
+    rateValue: 2400000,
+    totalLand: '1.75 Acres',
+    areaDisplay: '1.75 Acres',
+    totalPrice: '₹42 Lakh',
+    totalPriceShort: '₹42 Lakh',
+    location: '30 KM from Nagpur',
+    distanceKm: 30,
+    type: 'Agricultural Land',
+    price: '₹24 Lakh / Acre',
+    price_value: 4200000,
+    bhk: '1.75 Acres',
+    sqft: 76230, // 1.75 * 43560 sq ft
+    bathrooms: 0,
+    isFeatured: false,
+    reraId: 'AGRI-NAG-007',
+    possession: 'Immediate Registry / Clear Title',
+    imageUrl:
+      'https://user51559.na.imgto.link/public/20261104/fc5a2529a2127e3159bd53d7-whatsapp-image-2026-11-04-at-6-52-03-pm-1.avif',
+    heroImage:
+      'https://user51559.na.imgto.link/public/20261104/fc5a2529a2127e3159bd53d7-whatsapp-image-2026-11-04-at-6-52-03-pm-1.avif',
+    gallery: [
+      'https://user51559.na.imgto.link/public/20261104/fc5a2529a2127e3159bd53d7-whatsapp-image-2026-11-04-at-6-52-03-pm-1.avif',
+      'https://user51559.na.imgto.link/public/20261104/1a12307ad1eab0a27f7a476c-whatsapp-image-2026-11-04-at-6-52-03-pm.avif',
+    ],
+    features: [
+      'Total Land: 1.75 Acres',
+      'Total Price: ₹42 Lakh (₹24 Lakh / Acre)',
+      'Location: 30 KM from Nagpur (Only 35 Minutes)',
+      'Type: Agricultural Land with Immediate Registry',
+      'Accessible Entry Pricing for Land Banking',
+      'Surrounded by Developing Farmhouse Communities',
+    ],
+    amenities: [
+      'Tar Road Connectivity to Land Border',
+      'Clear and Marketable 7/12 Land Title Extract',
+      'Peaceful Environment with Fertile Soil Beds',
+      'Ready for Gated Enclosure & Tree Plantation',
+      'Rapidly Appreciating 30 KM Outskirts Sector',
+      'End-to-End Registration Handling by Aditya Shivpeth',
+    ],
+    description:
+      'PROPERTY 07 presents a superb value 1.75-acre agricultural land holding located 30 KM from Nagpur. With an attractive rate of ₹24 Lakh / Acre and a total purchase price of just ₹42 Lakh, it represents one of the most compelling entry-level investments for genuine farmland, weekend plantation, or generational wealth creation.',
+  },
+];
+
+// Helper to construct WhatsApp inquiry message for any property
+export function getPropertyWhatsAppUrl(property: Property): string {
+  const message = [
+    `*Inquiry for ${property.name} (${COMPANY_DETAILS.name})*`,
+    `━━━━━━━━━━━━━━━━━━━━━━━━━`,
+    `📍 *Location:* ${property.location}`,
+    `📐 *Total Land:* ${property.totalLand}`,
+    `💰 *Rate / Price:* ${property.ratePerAcre}`,
+    `🏷️ *Total Outlay:* ${property.totalPrice}`,
+    property.specialFeature ? `✨ *Highlight:* ${property.specialFeature}` : null,
+    `━━━━━━━━━━━━━━━━━━━━━━━━━`,
+    `Hello ${COMPANY_DETAILS.founder}, I am interested in visiting this property and reviewing the 7/12 land papers. Please share details and available site visit slots.`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}

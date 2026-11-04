@@ -1,41 +1,42 @@
 import React from 'react';
-import { MapPin, BedDouble, Maximize2, ShieldCheck, Eye, CalendarCheck, Sparkles, Trees, Compass, Heart } from 'lucide-react';
+import {
+  MapPin,
+  CalendarCheck,
+  Eye,
+  MessageSquare,
+  Trees,
+  Waves,
+  Route,
+  Layers,
+  Sparkles,
+  ShieldCheck,
+  Maximize2,
+  IndianRupee,
+} from 'lucide-react';
 import { Property } from '../types';
+import { getPropertyWhatsAppUrl, COMPANY_DETAILS } from '../data/properties';
 
 interface PropertyCardProps {
   property: Property;
   onBookNow: (property: Property) => void;
   onViewDetails: (property: Property) => void;
-  isFavorite?: boolean;
-  onToggleFavorite?: (property: Property) => void;
 }
 
 export const PropertyCard: React.FC<PropertyCardProps> = ({
   property,
   onBookNow,
   onViewDetails,
-  isFavorite = false,
-  onToggleFavorite,
 }) => {
-  const bhkLower = (property.bhk || '').toLowerCase();
-  const typeLower = (property.type || '').toLowerCase();
-  const isFarm =
-    bhkLower.includes('farm') ||
-    bhkLower.includes('field') ||
-    typeLower.includes('farm') ||
-    typeLower.includes('field') ||
-    typeLower.includes('agro') ||
-    typeLower.includes('agri');
-  const isPlot =
-    !isFarm &&
-    (bhkLower.includes('plot') || typeLower.includes('plot') || typeLower.includes('land'));
+  const isLakeTouch = property.specialFeature?.includes('Lake');
+  const isHighwayTouch = property.specialFeature?.includes('Highway');
+  const isFlexible = property.specialFeature?.includes('Flexible');
 
   return (
     <div
       id={`property-card-${property.id}`}
       role="button"
       tabIndex={0}
-      aria-label={`View details for ${property.name || property.title}`}
+      aria-label={`View details for ${property.name}`}
       onClick={() => onViewDetails(property)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -45,149 +46,143 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
       }}
       className="group relative flex flex-col bg-white border border-slate-200 border-b-4 border-b-[#002347] hover:border-b-[#C5A059] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#C5A059]"
     >
-      {/* Property Image Container */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+      {/* Property Image Container (Clean image with no written text) */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
         <img
           src={property.imageUrl || property.heroImage}
-          alt={property.name || property.title}
+          alt={property.title}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
         />
-
-        {/* Gradient Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
-
-        {/* Top Badges */}
-        <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between gap-2 pointer-events-none">
-          <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[#002347]/90 text-[#E6C687] border border-[#C5A059]/40 backdrop-blur-md shadow-md pointer-events-auto">
-              {property.type}
-            </span>
-            {property.isFeatured && (
-              <span className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A059] text-white shadow-md pointer-events-auto">
-                <Sparkles className="w-3 h-3" />
-                Featured
-              </span>
-            )}
-          </div>
-
-          {/* Favorite / Shortlist Heart Button */}
-          {onToggleFavorite && (
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                onToggleFavorite(property);
-              }}
-              className={`p-2 rounded-full backdrop-blur-md transition-all pointer-events-auto shadow-md cursor-pointer ${
-                isFavorite
-                  ? 'bg-rose-600 text-white hover:bg-rose-700 scale-105'
-                  : 'bg-black/45 text-white/80 hover:text-white hover:bg-black/70'
-              }`}
-              title={isFavorite ? 'Remove from shortlist' : 'Save to shortlist'}
-              aria-label={isFavorite ? 'Remove from shortlist' : 'Save to shortlist'}
-            >
-              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-white' : ''}`} />
-            </button>
-          )}
-        </div>
-
-        {/* Mobile-Friendly Quick View Pill / Tap cue */}
-        <div className="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/70 text-white backdrop-blur-md border border-white/20 text-xs font-medium shadow-md transition-all group-hover:bg-[#002347] group-hover:text-[#E6C687]">
-          <Eye className="w-3.5 h-3.5 text-[#E6C687]" />
-          <span>View Property</span>
-        </div>
       </div>
 
       {/* Card Body */}
       <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
         <div>
-          {/* Location & Title */}
-          <div className="flex items-center gap-1.5 text-xs text-[#B8924B] mb-1.5 font-semibold">
-            <MapPin className="w-3.5 h-3.5 shrink-0" />
-            <span className="truncate">{property.location}, Nagpur</span>
+          {/* Header row: Property Name & Status & Type */}
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <div className="flex items-center gap-2">
+              <h3 className="text-xl font-serif-luxury font-bold text-[#002347] group-hover:text-[#C5A059] transition-colors">
+                {property.name}
+              </h3>
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                {property.status}
+              </span>
+            </div>
+            <span className="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-semibold border border-slate-200 shrink-0">
+              {property.type}
+            </span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#002347] group-hover:text-[#C5A059] transition-colors line-clamp-1">
-            {property.name || property.title}
-          </h3>
+          {/* Rate Per Acre & Special Feature Row */}
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+            <div className="text-lg sm:text-xl font-serif-luxury font-bold text-[#002347]">
+              {property.ratePerAcre}
+            </div>
+            {property.specialFeature && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                {property.specialFeature}
+              </span>
+            )}
+          </div>
 
-          <p className="text-xs text-slate-600 mt-1 line-clamp-2 leading-relaxed">
-            {property.subtitle || `${property.type} in ${property.location}, Nagpur`}
+          <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-4">
+            {property.subtitle}
           </p>
 
-          {/* Key Specs Grid */}
-          <div className="grid grid-cols-2 gap-2 my-4 p-3 rounded-xl bg-[#F8F9FA] border border-slate-200/80 text-xs text-slate-700">
-            <div className="flex items-center gap-2">
-              {isFarm ? (
-                <Trees className="w-4 h-4 text-emerald-700 shrink-0" />
-              ) : isPlot ? (
-                <Compass className="w-4 h-4 text-[#B8924B] shrink-0" />
-              ) : (
-                <BedDouble className="w-4 h-4 text-[#002347] shrink-0" />
-              )}
-              <span className="truncate font-medium">{property.bhk}</span>
+          {/* Exact 4-Box Key Specification Matrix */}
+          <div className="grid grid-cols-2 gap-2.5 p-3 rounded-xl bg-[#F8F9FA] border border-slate-200 text-xs text-slate-700 mb-4">
+            {/* 1. Total Land */}
+            <div className="p-2 rounded-lg bg-white border border-slate-100">
+              <span className="text-[10px] uppercase font-bold text-slate-500 block">
+                Total Land
+              </span>
+              <div className="flex items-center gap-1.5 font-bold text-sm text-[#002347] mt-0.5">
+                {isLakeTouch ? (
+                  <Waves className="w-4 h-4 text-cyan-600 shrink-0" />
+                ) : isHighwayTouch ? (
+                  <Route className="w-4 h-4 text-amber-600 shrink-0" />
+                ) : isFlexible ? (
+                  <Layers className="w-4 h-4 text-purple-600 shrink-0" />
+                ) : (
+                  <Trees className="w-4 h-4 text-emerald-600 shrink-0" />
+                )}
+                <span className="truncate">{property.totalLand}</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Maximize2 className="w-4 h-4 text-[#002347] shrink-0" />
-              <span className="truncate font-medium">{property.type}</span>
+
+            {/* 2. Total Price */}
+            <div className="p-2 rounded-lg bg-white border border-slate-100">
+              <span className="text-[10px] uppercase font-bold text-slate-500 block">
+                Total Price
+              </span>
+              <div className="flex items-center gap-1 font-serif-luxury font-bold text-sm sm:text-base text-[#002347] mt-0.5">
+                <IndianRupee className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
+                <span className="truncate">{property.totalPrice}</span>
+              </div>
+            </div>
+
+            {/* 3. Location */}
+            <div className="p-2 rounded-lg bg-white border border-slate-100">
+              <span className="text-[10px] uppercase font-bold text-slate-500 block">
+                Location
+              </span>
+              <span className="font-semibold text-xs text-slate-800 block truncate mt-0.5">
+                {property.location}
+              </span>
+            </div>
+
+            {/* 4. Type / Highlight */}
+            <div className="p-2 rounded-lg bg-white border border-slate-100">
+              <span className="text-[10px] uppercase font-bold text-slate-500 block">
+                Category
+              </span>
+              <span className="font-semibold text-xs text-slate-800 block truncate mt-0.5">
+                {property.specialFeature || property.type}
+              </span>
             </div>
           </div>
 
-          {/* Highlights tag pills */}
-          <div className="flex flex-wrap gap-1.5 mb-4">
-            {(property.features || ['MahaRERA Registered', 'Prime Connectivity']).slice(0, 2).map((feat, idx) => (
-              <span
-                key={idx}
-                className="px-2.5 py-0.5 rounded-md text-[11px] bg-slate-100 text-slate-700 border border-slate-200 font-medium"
-              >
-                {feat}
-              </span>
+          {/* Quick bullet points */}
+          <div className="space-y-1 mb-4 text-xs text-slate-600">
+            {property.features?.slice(0, 2).map((feat, idx) => (
+              <div key={idx} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] shrink-0" />
+                <span className="truncate">{feat}</span>
+              </div>
             ))}
-            <span className="px-2.5 py-0.5 rounded-md text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium">
-              {property.possession || 'Verified Project'}
-            </span>
           </div>
         </div>
 
-        {/* Price & Action Row */}
-        <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2 sm:gap-3">
-          <div className="min-w-0">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 block">Starting At</span>
-            <span className="text-lg sm:text-xl md:text-2xl font-serif-luxury font-bold text-[#002347] truncate block">
-              {property.price}
-            </span>
-          </div>
+        {/* Action Row */}
+        <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+          {/* Direct WhatsApp Inquiry */}
+          <a
+            href={getPropertyWhatsAppUrl(property)}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-sm transition-all cursor-pointer"
+            title="Chat with Aditya Shivpeth on WhatsApp"
+          >
+            <MessageSquare className="w-4 h-4 shrink-0" />
+            <span>WhatsApp</span>
+          </a>
 
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Direct Details Action */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                onViewDetails(property);
-              }}
-              className="px-2.5 sm:px-3 py-2 rounded-xl border border-slate-300 hover:border-[#002347] hover:bg-slate-50 text-[#002347] font-semibold text-xs transition-colors flex items-center gap-1 cursor-pointer"
-              aria-label={`View full details of ${property.name || property.title}`}
-            >
-              <Eye className="w-3.5 h-3.5" />
-              <span className="hidden xs:inline">Details</span>
-            </button>
-
-            {/* Direct Database Site Visit Booking */}
-            <button
-              id={`book-now-button-${property.id}`}
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                onBookNow(property);
-              }}
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-xs sm:text-sm shadow-md shadow-[#C5A059]/25 transition-all transform active:scale-95 cursor-pointer"
-            >
-              <CalendarCheck className="w-4 h-4 text-[#002347] shrink-0" />
-              <span>Book Visit</span>
-            </button>
-          </div>
+          {/* Schedule Site Visit */}
+          <button
+            id={`book-now-button-${property.id}`}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onBookNow(property);
+            }}
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-xs shadow-md transition-all cursor-pointer"
+          >
+            <CalendarCheck className="w-4 h-4 text-[#002347] shrink-0" />
+            <span>Book Visit</span>
+          </button>
         </div>
       </div>
     </div>
