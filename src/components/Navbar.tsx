@@ -38,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'About Nagpur Acres', id: 'about-us-section' },
     { name: 'Founder Profile', id: 'founder-section' },
     { name: 'Private Services', id: 'services-section' },
+    { name: 'Client Reviews', id: 'testimonials-section' },
     { name: 'Contact & Offices', id: 'contact-section' },
   ];
 

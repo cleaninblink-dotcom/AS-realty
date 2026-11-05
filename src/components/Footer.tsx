@@ -153,6 +153,14 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
             </li>
             <li>
               <button
+                onClick={() => onScrollToSection('testimonials-section')}
+                className="hover:text-white transition-colors text-left cursor-pointer"
+              >
+                Verified Client Testimonials
+              </button>
+            </li>
+            <li>
+              <button
                 onClick={() => onScrollToSection('services-section')}
                 className="hover:text-white transition-colors text-left cursor-pointer"
               >

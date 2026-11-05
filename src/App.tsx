@@ -5,6 +5,7 @@ import { PropertyGrid } from './components/PropertyGrid';
 import { PropertyComparisonTable } from './components/PropertyComparisonTable';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
+import { TestimonialSlider } from './components/TestimonialSlider';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { BookVisitModal } from './components/BookVisitModal';
@@ -80,6 +81,9 @@ export default function App() {
 
         {/* Bespoke Client Services & VIP Privileges */}
         <ServicesSection onOpenBooking={() => handleOpenBooking(null)} />
+
+        {/* Client Reviews & Verified Testimonial Slider */}
+        <TestimonialSlider />
 
         {/* Contact Us & Direct Inquiry Section */}
         <ContactSection onOpenBooking={() => handleOpenBooking(null)} />

@@ -338,13 +338,13 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   </span>
                 </div>
 
-                {/* 6. Zero Mile Distance */}
+                {/* 6. Distance from Nagpur */}
                 <div className="p-3.5 rounded-xl bg-[#F8F9FA] border border-slate-200">
-                  <span className="text-[10px] font-bold uppercase text-slate-500 block">
-                    Zero Mile
+                  <span className="text-[10px] font-bold uppercase text-slate-500 block truncate">
+                    Distance from Nagpur
                   </span>
-                  <span className="font-semibold text-xs sm:text-sm text-slate-800 block mt-1 truncate">
-                    {property.zeroMileDistance || `${property.distanceKm} km`}
+                  <span className="font-semibold text-xs sm:text-sm text-[#002347] block mt-1 truncate">
+                    {property.distanceKm} KM from Nagpur
                   </span>
                 </div>
               </div>

@@ -133,18 +133,14 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               </span>
             </div>
 
-            {/* 4. Water & Zero Mile */}
+            {/* 4. Distance from Nagpur */}
             <div className="p-2 rounded-lg bg-white border border-slate-100">
-              <span className="text-[10px] uppercase font-bold text-slate-500 block">
-                Water &amp; Distance
+              <span className="text-[10px] uppercase font-bold text-slate-500 block truncate">
+                Distance from Nagpur
               </span>
-              <div className="flex items-center justify-between text-xs font-semibold text-slate-800 mt-0.5">
-                <span className={property.waterSource === 'Yes' ? 'text-emerald-700 font-bold' : property.waterSource === 'Nearby' ? 'text-cyan-700 font-bold' : 'text-slate-600'}>
-                  Water: {property.waterSource || 'No'}
-                </span>
-                <span className="text-slate-500 text-[11px] font-normal">
-                  {property.zeroMileDistance || `${property.distanceKm} km`}
-                </span>
+              <div className="flex items-center gap-1.5 font-bold text-xs sm:text-sm text-[#002347] mt-0.5">
+                <MapPin className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
+                <span className="truncate">{property.distanceKm} KM from Nagpur</span>
               </div>
             </div>
           </div>
