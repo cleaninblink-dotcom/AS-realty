@@ -204,13 +204,13 @@ export const PropertyComparisonTable: React.FC<PropertyComparisonTableProps> = (
             </div>
 
             <a
-              href={`https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello Aditya Shivpeth, I would like to review the complete 7 properties comparison dossier and title records.')}`}
+              href={`https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello Aditya Shivpeth, I would like to review the complete 15 properties portfolio and title records.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-bold text-emerald-700 hover:text-emerald-800 transition-colors"
             >
               <ExternalLink className="w-3.5 h-3.5" />
-              <span>Download Full 7-Property Dossier on WhatsApp</span>
+              <span>Download Full 15-Property Portfolio on WhatsApp</span>
             </a>
           </div>
         </div>

@@ -26,16 +26,16 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
   onBookNow,
   onViewDetails,
 }) => {
-  const [activeTab, setActiveTab] = useState<'all' | 'lake' | 'highway' | 'flexible' | 'near'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'highway' | 'water' | 'tar' | 'near'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProperties = useMemo(() => {
     return properties.filter((prop) => {
       // Tab filter
-      if (activeTab === 'lake' && !prop.specialFeature?.includes('Lake')) return false;
-      if (activeTab === 'highway' && !prop.specialFeature?.includes('Highway')) return false;
-      if (activeTab === 'flexible' && !prop.specialFeature?.includes('Flexible')) return false;
-      if (activeTab === 'near' && prop.distanceKm > 35) return false;
+      if (activeTab === 'highway' && !prop.roadAccess?.toLowerCase().includes('highway') && !prop.specialFeature?.toLowerCase().includes('highway')) return false;
+      if (activeTab === 'water' && prop.waterSource !== 'Yes' && prop.waterSource !== 'Nearby') return false;
+      if (activeTab === 'tar' && !prop.roadAccess?.toLowerCase().includes('tar') && !prop.roadAccess?.toLowerCase().includes('cement')) return false;
+      if (activeTab === 'near' && prop.distanceKm > 40) return false;
 
       // Search query
       if (searchQuery.trim()) {
@@ -43,11 +43,14 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
         const matchesName = prop.name.toLowerCase().includes(q);
         const matchesNumber = prop.propertyNumber.toLowerCase().includes(q);
         const matchesLocation = prop.location.toLowerCase().includes(q);
+        const matchesRoad = (prop.roadAccess || '').toLowerCase().includes(q);
+        const matchesWater = (prop.waterSource || '').toLowerCase().includes(q);
         const matchesType = prop.type.toLowerCase().includes(q);
         const matchesFeature = (prop.specialFeature || '').toLowerCase().includes(q);
         const matchesPrice = prop.ratePerAcre.toLowerCase().includes(q) || prop.totalPrice.toLowerCase().includes(q);
+        const matchesAcres = prop.totalLand.toLowerCase().includes(q);
 
-        if (!matchesName && !matchesNumber && !matchesLocation && !matchesType && !matchesFeature && !matchesPrice) {
+        if (!matchesName && !matchesNumber && !matchesLocation && !matchesRoad && !matchesWater && !matchesType && !matchesFeature && !matchesPrice && !matchesAcres) {
           return false;
         }
       }
@@ -69,10 +72,10 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-[#002347] tracking-tight">
-              Featured Land &amp; Farmhouse Portfolio
+              Complete Land &amp; Farmhouse Portfolio
             </h2>
             <p className="text-slate-600 text-sm mt-2 max-w-xl">
-              Complete collection of 7 legally vetted agricultural holdings, lake-touch parcels, highway-frontage plots, and customizable acreage near Nagpur.
+              Curated inventory of all {properties.length} verified agricultural holdings, highway touch parcels, tar road assets, and high-yield farmland near Nagpur.
             </p>
           </div>
 
@@ -108,19 +111,7 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
                   : 'bg-[#F8F9FA] text-slate-700 hover:bg-slate-100 border border-slate-200'
               }`}
             >
-              All 7 Properties
-            </button>
-
-            <button
-              onClick={() => setActiveTab('lake')}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                activeTab === 'lake'
-                  ? 'bg-cyan-700 text-white shadow-sm'
-                  : 'bg-[#F8F9FA] text-slate-700 hover:bg-slate-100 border border-slate-200'
-              }`}
-            >
-              <Waves className="w-3.5 h-3.5" />
-              <span>Lake Touch 🌊 (02)</span>
+              All {properties.length} Properties
             </button>
 
             <button
@@ -132,19 +123,31 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
               }`}
             >
               <Route className="w-3.5 h-3.5" />
-              <span>Highway Touch 🛣️ (06)</span>
+              <span>Highway Touch 🛣️</span>
             </button>
 
             <button
-              onClick={() => setActiveTab('flexible')}
+              onClick={() => setActiveTab('water')}
               className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                activeTab === 'flexible'
-                  ? 'bg-purple-700 text-white shadow-sm'
+                activeTab === 'water'
+                  ? 'bg-cyan-700 text-white shadow-sm'
+                  : 'bg-[#F8F9FA] text-slate-700 hover:bg-slate-100 border border-slate-200'
+              }`}
+            >
+              <Waves className="w-3.5 h-3.5" />
+              <span>Water Available 💧</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('tar')}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                activeTab === 'tar'
+                  ? 'bg-slate-800 text-[#E6C687] shadow-sm'
                   : 'bg-[#F8F9FA] text-slate-700 hover:bg-slate-100 border border-slate-200'
               }`}
             >
               <Layers className="w-3.5 h-3.5" />
-              <span>Flexible Area (04)</span>
+              <span>Tar / Cement Road</span>
             </button>
 
             <button
@@ -156,7 +159,7 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
               }`}
             >
               <MapPin className="w-3.5 h-3.5" />
-              <span>≤ 32 KM Distance</span>
+              <span>≤ 40 km (Near Nagpur)</span>
             </button>
           </div>
 
@@ -166,7 +169,7 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search 01, Saoner, Lake..."
+              placeholder="Search Juna Pani, Highway, 70 Acres..."
               className="w-full pl-9 pr-8 py-2.5 bg-[#F8F9FA] border border-slate-300 rounded-xl text-slate-800 text-xs sm:text-sm focus:outline-none focus:border-[#C5A059] focus:bg-white transition-colors"
             />
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />

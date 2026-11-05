@@ -123,24 +123,29 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               </div>
             </div>
 
-            {/* 3. Location */}
+            {/* 3. Road Access */}
             <div className="p-2 rounded-lg bg-white border border-slate-100">
               <span className="text-[10px] uppercase font-bold text-slate-500 block">
-                Location
+                Road Access
               </span>
               <span className="font-semibold text-xs text-slate-800 block truncate mt-0.5">
-                {property.location}
+                {property.roadAccess || 'Direct Road'}
               </span>
             </div>
 
-            {/* 4. Type / Highlight */}
+            {/* 4. Water & Zero Mile */}
             <div className="p-2 rounded-lg bg-white border border-slate-100">
               <span className="text-[10px] uppercase font-bold text-slate-500 block">
-                Category
+                Water &amp; Distance
               </span>
-              <span className="font-semibold text-xs text-slate-800 block truncate mt-0.5">
-                {property.specialFeature || property.type}
-              </span>
+              <div className="flex items-center justify-between text-xs font-semibold text-slate-800 mt-0.5">
+                <span className={property.waterSource === 'Yes' ? 'text-emerald-700 font-bold' : property.waterSource === 'Nearby' ? 'text-cyan-700 font-bold' : 'text-slate-600'}>
+                  Water: {property.waterSource || 'No'}
+                </span>
+                <span className="text-slate-500 text-[11px] font-normal">
+                  {property.zeroMileDistance || `${property.distanceKm} km`}
+                </span>
+              </div>
             </div>
           </div>
 

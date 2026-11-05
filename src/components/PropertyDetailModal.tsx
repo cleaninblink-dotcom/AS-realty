@@ -276,7 +276,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                 <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
                 Official Land Specifications
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                 {/* 1. Total Land Area */}
                 <div className="p-3.5 rounded-xl bg-[#F8F9FA] border border-slate-200">
                   <span className="text-[10px] font-bold uppercase text-slate-500 block">
@@ -306,23 +306,45 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   </span>
                 </div>
 
-                {/* 3. Location */}
+                {/* 3. Rate / Acre */}
                 <div className="p-3.5 rounded-xl bg-[#F8F9FA] border border-slate-200">
                   <span className="text-[10px] font-bold uppercase text-slate-500 block">
-                    Location
+                    Price / Acre
                   </span>
-                  <span className="font-semibold text-xs sm:text-sm text-slate-800 block mt-1 truncate">
-                    {property.location}
+                  <span className="font-bold text-xs sm:text-sm text-slate-900 block mt-1 truncate">
+                    {property.ratePerAcre}
                   </span>
                 </div>
 
-                {/* 4. Type / Special Feature */}
+                {/* 4. Road Access */}
                 <div className="p-3.5 rounded-xl bg-[#F8F9FA] border border-slate-200">
                   <span className="text-[10px] font-bold uppercase text-slate-500 block">
-                    Category
+                    Road Access
                   </span>
                   <span className="font-semibold text-xs sm:text-sm text-slate-800 block mt-1 truncate">
-                    {property.specialFeature || property.type}
+                    {property.roadAccess || 'Direct Access'}
+                  </span>
+                </div>
+
+                {/* 5. Water Source */}
+                <div className="p-3.5 rounded-xl bg-[#F8F9FA] border border-slate-200">
+                  <span className="text-[10px] font-bold uppercase text-slate-500 block">
+                    Water
+                  </span>
+                  <span className={`font-bold text-xs sm:text-sm block mt-1 truncate ${
+                    property.waterSource === 'Yes' ? 'text-emerald-700' : property.waterSource === 'Nearby' ? 'text-cyan-700' : 'text-slate-600'
+                  }`}>
+                    {property.waterSource === 'Yes' ? '💧 Available' : property.waterSource === 'Nearby' ? '🌊 Nearby' : 'No'}
+                  </span>
+                </div>
+
+                {/* 6. Zero Mile Distance */}
+                <div className="p-3.5 rounded-xl bg-[#F8F9FA] border border-slate-200">
+                  <span className="text-[10px] font-bold uppercase text-slate-500 block">
+                    Zero Mile
+                  </span>
+                  <span className="font-semibold text-xs sm:text-sm text-slate-800 block mt-1 truncate">
+                    {property.zeroMileDistance || `${property.distanceKm} km`}
                   </span>
                 </div>
               </div>

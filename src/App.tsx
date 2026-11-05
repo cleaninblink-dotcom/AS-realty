@@ -9,7 +9,6 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { BookVisitModal } from './components/BookVisitModal';
 import { PropertyDetailModal } from './components/PropertyDetailModal';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { PROPERTIES } from './data/properties';
 import { Property } from './types';
 
@@ -62,7 +61,7 @@ export default function App() {
         {/* Architectural Advisory Hero Section */}
         <Hero onOpenBooking={() => handleOpenBooking(null)} />
 
-        {/* Complete List of all 7 Properties Arranged Professionally */}
+        {/* Complete List of all 15 Properties Arranged Professionally */}
         <PropertyGrid
           properties={PROPERTIES}
           onBookNow={handleBookFromCard}
@@ -91,9 +90,6 @@ export default function App() {
         onScrollToSection={handleScrollToSection}
         onOpenBooking={() => handleOpenBooking(null)}
       />
-
-      {/* Sticky Bottom-Right WhatsApp Quick Contact Widget */}
-      <FloatingWhatsApp onOpenBooking={() => handleOpenBooking(null)} />
 
       {/* Detailed Property Specifications Modal */}
       <PropertyDetailModal

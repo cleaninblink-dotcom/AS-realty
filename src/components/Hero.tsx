@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             className="flex items-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-sm tracking-wider uppercase shadow-xl shadow-[#C5A059]/25 transition-all transform active:scale-95 cursor-pointer"
           >
             <Sparkles className="w-4 h-4 text-[#002347]" />
-            <span>Explore All 7 Properties</span>
+            <span>Explore All 15 Properties</span>
           </a>
 
           <a

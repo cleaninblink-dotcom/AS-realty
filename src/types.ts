@@ -5,17 +5,21 @@ export interface Property {
   title: string; // alias for name
   subtitle?: string;
   status: 'Available' | 'Under Discussion' | 'Sold';
-  ratePerAcre: string; // e.g. '₹18 Lakh / Acre', '₹19 Lakh / Acre', etc.
+  ratePerAcre: string; // e.g. '₹25 L / Acre', '₹22 L / Acre', etc.
   rateValue?: number;
-  totalLand: string; // '5 Acres', '6.67 Acres', "As per buyer's requirement"
-  areaDisplay: string; // '5 Acres', '6.67 Acres', 'Flexible', '1.75 Acres'
-  totalPrice: string; // '₹90 Lakh', '₹1.2663 Crore', 'Depends on land area', '₹1.80 Crore Total', '₹42 Lakh'
-  totalPriceShort: string; // '₹90 Lakh', '₹1.2663 Cr', 'Depends on area', '₹1.80 Cr', '₹42 Lakh'
-  location: string; // '32 KM from Nagpur', '60 KM from Nagpur', etc.
+  totalLand: string; // '70 Acres', '6.60 Acres', etc.
+  acresValue?: number;
+  areaDisplay: string; // '70 Acres', '6.60 Acres', etc.
+  totalPrice: string; // e.g. '₹17.50 Crore'
+  totalPriceShort: string; // '₹17.50 Cr'
+  location: string; // e.g. 'Juna Pani', '35 km from Zero Mile'
   distanceKm: number;
-  type: string; // 'Agricultural Land', 'Lake Touch Property 🌊', etc.
-  specialFeature?: string; // 'Lake Touch Property 🌊', 'Highway Touch Land 🛣️', 'Flexible Land Availability'
-  price: string; // Display rate/price
+  zeroMileDistance?: string; // '35 km', '58 km', etc.
+  roadAccess?: string; // 'Tar road touch', 'Cement road touch', 'Highway touch', etc.
+  waterSource?: string; // 'Yes' | 'No' | 'Nearby'
+  type: string; // 'Agricultural Land', 'Highway Touch Land 🛣️', etc.
+  specialFeature?: string;
+  price: string;
   price_value: number; // numeric value in Rupees for sorting
   imageUrl: string;
   heroImage: string; // alias for imageUrl

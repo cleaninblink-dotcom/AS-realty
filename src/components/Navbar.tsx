@@ -33,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [logoError, setLogoError] = useState(false);
 
   const navLinks = [
-    { name: 'All 7 Properties', id: 'properties-section' },
+    { name: 'All 15 Properties', id: 'properties-section' },
     { name: 'Property Comparison', id: 'comparison-section' },
     { name: 'About Nagpur Acres', id: 'about-us-section' },
     { name: 'Founder Profile', id: 'founder-section' },
@@ -80,9 +80,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div>
             <span className="font-cinzel text-lg sm:text-xl md:text-2xl font-bold tracking-widest text-white flex items-center gap-1.5">
               NAGPUR <span className="text-[#C5A059]">ACRES</span>
-            </span>
-            <span className="block text-[10px] text-slate-300 uppercase tracking-wider font-sans">
-              Aditya Shivpeth
             </span>
           </div>
         </div>
