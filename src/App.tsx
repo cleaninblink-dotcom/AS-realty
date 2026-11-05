@@ -58,10 +58,7 @@ export default function App() {
 
       {/* Main Content Area */}
       <main>
-        {/* Architectural Advisory Hero Section */}
-        <Hero onOpenBooking={() => handleOpenBooking(null)} />
-
-        {/* Complete List of all 15 Properties Arranged Professionally */}
+        {/* Complete List of all 15 Properties Arranged Professionally (At Top) */}
         <PropertyGrid
           properties={PROPERTIES}
           onBookNow={handleBookFromCard}
@@ -74,6 +71,9 @@ export default function App() {
           onSelectProperty={handleViewDetails}
           onBookVisit={handleBookFromCard}
         />
+
+        {/* Architectural Advisory Hero Section */}
+        <Hero onOpenBooking={() => handleOpenBooking(null)} />
 
         {/* About Nagpur Acres & Aditya Shivpeth (Founder Profile & Due Diligence) */}
         <AboutSection onOpenBooking={() => handleOpenBooking(null)} />

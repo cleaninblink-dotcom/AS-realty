@@ -60,7 +60,7 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
   }, [properties, activeTab, searchQuery]);
 
   return (
-    <section id="properties-section" className="py-20 bg-[#F8F9FA] relative">
+    <section id="properties-section" className="pt-28 pb-16 sm:pt-36 sm:pb-20 bg-[#F8F9FA] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">

@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   return (
-    <section id="hero-section" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <section id="hero-section" className="relative py-20 md:py-28 overflow-hidden">
       {/* Background Architectural Luxury Image & Scrim */}
       <div className="absolute inset-0 z-0">
         <img
