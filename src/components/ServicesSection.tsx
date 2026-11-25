@@ -41,11 +41,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-8 h-[2px] bg-[#C5A059]" />
-              <span className="text-xs uppercase tracking-widest text-[#002347] font-bold">
+              <span className="text-xs uppercase tracking-widest text-[#0D3823] font-bold">
                 Tailored Privileges
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#002347] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#0D3823] tracking-tight">
               Bespoke Client Services
             </h2>
             <p className="text-slate-600 text-sm mt-1 max-w-xl">
@@ -55,7 +55,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
 
           <button
             onClick={onOpenBooking}
-            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-[#002347] text-xs uppercase tracking-wider text-[#002347] font-bold transition-all shadow-sm cursor-pointer"
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-[#0D3823] text-xs uppercase tracking-wider text-[#0D3823] font-bold transition-all shadow-sm cursor-pointer"
           >
             <span>Request Bespoke Service</span>
             <ArrowRight className="w-4 h-4 text-[#C5A059]" />
@@ -68,16 +68,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-slate-200 border-b-4 border-b-[#002347] hover:border-b-[#C5A059] transition-all flex flex-col justify-between group shadow-sm hover:shadow-md"
+                className="p-6 rounded-2xl bg-white border border-slate-200 border-b-4 border-b-[#0D3823] hover:border-b-[#C5A059] transition-all flex flex-col justify-between group shadow-sm hover:shadow-md"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#002347] text-[#E6C687] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-[#0D3823] text-[#E6C687] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform shadow-sm">
                     <Icon className="w-6 h-6" />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-[#B8924B] block mb-1">
                     {srv.tag}
                   </span>
-                  <h3 className="text-lg font-serif-luxury font-bold text-[#002347] mb-2">
+                  <h3 className="text-lg font-serif-luxury font-bold text-[#0D3823] mb-2">
                     {srv.title}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -88,7 +88,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 <div className="pt-6 mt-4 border-t border-slate-100">
                   <button
                     onClick={onOpenBooking}
-                    className="flex items-center gap-1.5 text-xs text-[#002347] font-bold hover:text-[#C5A059] transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs text-[#0D3823] font-bold hover:text-[#C5A059] transition-colors cursor-pointer"
                   >
                     <span>Inquire Details</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#C5A059]" />

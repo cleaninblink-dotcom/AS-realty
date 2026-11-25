@@ -196,14 +196,14 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
   return (
     <div
       id="book-visit-modal-overlay"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#001730]/75 backdrop-blur-md transition-all duration-300 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#072618]/75 backdrop-blur-md transition-all duration-300 overflow-y-auto"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div
         id="book-visit-modal-container"
-        className="relative w-full max-w-xl my-6 bg-white border border-slate-200 border-b-4 border-b-[#002347] rounded-2xl shadow-2xl text-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full max-w-xl my-6 bg-white border border-slate-200 border-b-4 border-b-[#0D3823] rounded-2xl shadow-2xl text-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-200"
       >
         {/* Top Gold Metallic Accent Bar */}
         <div className="h-1.5 w-full bg-gradient-to-r from-[#9E7D3B] via-[#E5C378] to-[#9E7D3B]" />
@@ -220,11 +220,11 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
                 {COMPANY_DETAILS.founder} Advisory
               </span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-serif-luxury font-bold text-[#002347] tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-serif-luxury font-bold text-[#0D3823] tracking-tight">
               {isSubmitted ? 'Visit Request Dispatched' : 'Book VIP Site Visit / Meeting'}
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-1">
-              Direct connection with <strong className="text-[#002347]">{COMPANY_DETAILS.founder}</strong> on WhatsApp.
+              Direct connection with <strong className="text-[#0D3823]">{COMPANY_DETAILS.founder}</strong> on WhatsApp.
             </p>
           </div>
 
@@ -245,7 +245,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               {/* Client Full Name */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#002347] mb-1.5">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-1.5">
                   1. Full Name <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -267,7 +267,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
               {/* Phone and Email in 2 columns */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#002347] mb-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-1.5">
                     2. Phone Number <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
@@ -287,7 +287,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#002347] mb-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-1.5">
                     3. Email <span className="text-slate-400 font-normal text-[11px]">(Optional)</span>
                   </label>
                   <div className="relative">
@@ -308,7 +308,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
 
               {/* Consultation Area / Advisory Domain */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#002347] mb-1.5">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-1.5">
                   4. Advisory Domain / Area of Interest <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -336,7 +336,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
 
               {/* Date Selection */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#002347] mb-1.5">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-1.5">
                   5. Preferred Consultation Date <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -358,13 +358,13 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
               {/* Time Slot Selection */}
               <div>
                 <div className="flex items-center justify-between mb-1.5">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#002347]">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#0D3823]">
                     6. Preferred Time Slot <span className="text-red-500">*</span>
                   </label>
                   <button
                     type="button"
                     onClick={() => setUseCustomTime(!useCustomTime)}
-                    className="text-xs text-[#9E7D3B] hover:text-[#002347] underline font-medium transition-colors cursor-pointer"
+                    className="text-xs text-[#9E7D3B] hover:text-[#0D3823] underline font-medium transition-colors cursor-pointer"
                   >
                     {useCustomTime ? 'Use standard slots' : 'Enter specific time'}
                   </button>
@@ -381,7 +381,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
                           onClick={() => setSelectedTime(slot)}
                           className={`flex items-center gap-2 p-2.5 sm:p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                             isSelected
-                              ? 'bg-[#002347] border-[#002347] text-[#E6C687] shadow-sm'
+                              ? 'bg-[#0D3823] border-[#0D3823] text-[#E6C687] shadow-sm'
                               : 'bg-[#F8F9FA] border-slate-200 text-slate-700 hover:border-slate-300'
                           }`}
                         >
@@ -433,11 +433,11 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
                     <MessageSquare className="w-3.5 h-3.5 text-emerald-700" />
                     Directed to WhatsApp ({COMPANY_DETAILS.phoneDisplay})
                   </span>
-                  <h4 className="text-2xl font-serif-luxury font-bold text-[#002347]">
+                  <h4 className="text-2xl font-serif-luxury font-bold text-[#0D3823]">
                     Visit Details Prepared!
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-md mx-auto">
-                    Thank you, <strong className="text-[#002347]">{lastSubmission.fullName}</strong>. Your consultation brief has been forwarded directly to <strong className="text-[#002347]">{COMPANY_DETAILS.founder}</strong> on WhatsApp.
+                    Thank you, <strong className="text-[#0D3823]">{lastSubmission.fullName}</strong>. Your consultation brief has been forwarded directly to <strong className="text-[#0D3823]">{COMPANY_DETAILS.founder}</strong> on WhatsApp.
                   </p>
                 </div>
 
@@ -447,7 +447,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
                     <span className="font-semibold text-slate-500 uppercase tracking-wider text-[10px]">
                       Recipient
                     </span>
-                    <span className="font-bold text-[#002347]">
+                    <span className="font-bold text-[#0D3823]">
                       {COMPANY_DETAILS.founder} ({COMPANY_DETAILS.phoneDisplay})
                     </span>
                   </div>
@@ -494,7 +494,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
                   <button
                     type="button"
                     onClick={handleResetForm}
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#002347] font-bold text-xs uppercase tracking-wider transition-all border border-slate-200 cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#0D3823] font-bold text-xs uppercase tracking-wider transition-all border border-slate-200 cursor-pointer"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
                     <span>Schedule Another Visit / Inquiry</span>
@@ -505,7 +505,7 @@ export const BookVisitModal: React.FC<BookVisitModalProps> = ({
                   <button
                     type="button"
                     onClick={onClose}
-                    className="text-xs text-slate-500 hover:text-[#002347] font-medium transition-colors cursor-pointer"
+                    className="text-xs text-slate-500 hover:text-[#0D3823] font-medium transition-colors cursor-pointer"
                   >
                     Back to Website
                   </button>

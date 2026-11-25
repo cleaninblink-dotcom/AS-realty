@@ -15,16 +15,17 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
   };
 
   return (
-    <footer className="bg-[#002347] border-t-2 border-[#C5A059]/40 text-slate-300 text-xs">
+    <footer className="bg-[#0D3823] border-t-2 border-[#C5A059]/40 text-slate-300 text-xs">
       {/* Top Banner */}
       <div className="border-b border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#001730] border border-[#C5A059]/60 overflow-hidden flex items-center justify-center shrink-0">
+            <div className="w-11 h-11 rounded-lg bg-black border border-[#C5A059]/60 overflow-hidden flex items-center justify-center shrink-0">
               {!logoError && COMPANY_DETAILS.logoUrl ? (
                 <img
                   src={COMPANY_DETAILS.logoUrl}
                   alt="Nagpur Acres Logo"
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                   onError={() => setLogoError(true)}
                 />
@@ -47,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
               href={`https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent('Hello Nagpur Acres, I would like to connect with your luxury advisory desk.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#001730] border border-emerald-400/40 text-emerald-300 hover:bg-emerald-600 hover:text-white transition-all font-medium"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#072618] border border-emerald-400/40 text-emerald-300 hover:bg-emerald-600 hover:text-white transition-all font-medium"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>WhatsApp: {COMPANY_DETAILS.phoneDisplay}</span>
@@ -55,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
 
             <button
               onClick={scrollToTop}
-              className="p-2.5 rounded-xl bg-[#001730] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-white transition-colors cursor-pointer"
+              className="p-2.5 rounded-xl bg-[#072618] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-white transition-colors cursor-pointer"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />
@@ -203,7 +204,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
                 href={COMPANY_DETAILS.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-[#001730] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-[#E6C687] transition-all"
+                className="p-2.5 rounded-xl bg-[#072618] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-[#E6C687] transition-all"
                 aria-label="Instagram"
                 title={`Follow us on Instagram ${COMPANY_DETAILS.instagramHandle}`}
               >
@@ -213,7 +214,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-[#001730] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-[#E6C687] transition-all"
+                className="p-2.5 rounded-xl bg-[#072618] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-[#E6C687] transition-all"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -222,7 +223,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-[#001730] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-[#E6C687] transition-all"
+                className="p-2.5 rounded-xl bg-[#072618] border border-white/15 hover:border-[#C5A059] text-slate-200 hover:text-[#E6C687] transition-all"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -233,7 +234,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToSection, onOpenBooking
       </div>
 
       {/* RERA Disclaimer & Copyright */}
-      <div className="border-t border-white/10 py-6 bg-[#001730]">
+      <div className="border-t border-white/10 py-6 bg-[#072618]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
           <p className="text-[11px] text-slate-400 leading-relaxed">
             <strong>Disclaimer:</strong> Nagpur Acres (Owned by {COMPANY_DETAILS.founder}) is an authorized luxury real estate advisory and facilitation firm. All advisory disclosures, architectural perspectives, and developer agreements are verified against official MahaRERA documentation.

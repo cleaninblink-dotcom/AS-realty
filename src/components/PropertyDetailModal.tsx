@@ -122,14 +122,14 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
   return (
     <div
       id="property-detail-modal-overlay"
-      className="fixed inset-0 z-50 flex flex-col sm:items-center sm:justify-center bg-[#001730]/75 backdrop-blur-sm sm:backdrop-blur-md transition-all duration-200 overflow-hidden sm:p-4 md:p-6"
+      className="fixed inset-0 z-50 flex flex-col sm:items-center sm:justify-center bg-[#072618]/75 backdrop-blur-sm sm:backdrop-blur-md transition-all duration-200 overflow-hidden sm:p-4 md:p-6"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div
         id="property-detail-modal-content"
-        className="relative w-full h-[100dvh] sm:h-auto sm:max-h-[92vh] sm:max-w-4xl bg-white sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden border-0 sm:border sm:border-slate-200 sm:border-b-4 sm:border-b-[#002347] text-slate-800 animate-fadeIn"
+        className="relative w-full h-[100dvh] sm:h-auto sm:max-h-[92vh] sm:max-w-4xl bg-white sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden border-0 sm:border sm:border-slate-200 sm:border-b-4 sm:border-b-[#0D3823] text-slate-800 animate-fadeIn"
       >
         {/* Top Gold Accent Bar */}
         <div className="h-1.5 w-full bg-gradient-to-r from-[#9E7D3B] via-[#E5C378] to-[#9E7D3B] shrink-0" />
@@ -138,7 +138,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
         <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 px-3.5 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 shrink-0 shadow-xs">
           <button
             onClick={onClose}
-            className="flex items-center gap-1.5 px-3 py-2 -ml-1 rounded-xl bg-slate-100 hover:bg-[#002347] hover:text-[#E6C687] text-[#002347] font-semibold text-xs transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-2 -ml-1 rounded-xl bg-slate-100 hover:bg-[#0D3823] hover:text-[#E6C687] text-[#0D3823] font-semibold text-xs transition-all cursor-pointer active:scale-95"
             aria-label="Back to properties list"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -146,11 +146,11 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
           </button>
 
           <div className="min-w-0 text-center px-2 flex-1">
-            <h2 className="text-xs sm:text-sm font-serif-luxury font-bold text-[#002347] truncate">
+            <h2 className="text-xs sm:text-sm font-serif-luxury font-bold text-[#0D3823] truncate">
               {property.name} — {property.totalLand}
             </h2>
             <p className="text-[11px] text-slate-500 truncate flex items-center justify-center gap-1">
-              <MapPin className="w-3 h-3 text-[#C5A059] shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
               <span>{property.location}</span>
             </p>
           </div>
@@ -158,7 +158,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
           <div className="flex items-center gap-1.5 shrink-0">
             <button
               onClick={handleShare}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-[#002347] transition-colors relative cursor-pointer"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-[#0D3823] transition-colors relative cursor-pointer"
               aria-label="Share property link"
               title="Share Property"
             >
@@ -232,7 +232,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-5 border-b border-slate-200">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#002347] text-[#E6C687] border border-[#C5A059]/40 shadow-xs">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#0D3823] text-[#E6C687] border border-[#C5A059]/40 shadow-xs">
                     {property.name}
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
@@ -249,7 +249,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   )}
                 </div>
 
-                <h1 className="text-2xl sm:text-3xl font-serif-luxury font-bold text-[#002347]">
+                <h1 className="text-2xl sm:text-3xl font-serif-luxury font-bold text-[#0D3823]">
                   {property.name}
                 </h1>
                 <p className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-500 mt-1">
@@ -262,7 +262,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                 <span className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest block font-bold">
                   Rate / Outlay
                 </span>
-                <span className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#002347] block">
+                <span className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#0D3823] block">
                   {property.ratePerAcre}
                 </span>
                 <span className="text-xs text-slate-600 font-semibold block">
@@ -272,7 +272,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             </div>
             {/* The 4-Box Key Specification Cards */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#002347] mb-3 flex items-center gap-1.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-3 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
                 Official Land Specifications
               </h3>
@@ -282,7 +282,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   <span className="text-[10px] font-bold uppercase text-slate-500 block">
                     Total Land
                   </span>
-                  <div className="flex items-center gap-1.5 font-bold text-sm text-[#002347] mt-1">
+                  <div className="flex items-center gap-1.5 font-bold text-sm text-[#0D3823] mt-1">
                     {isLakeTouch ? (
                       <Waves className="w-4 h-4 text-cyan-600 shrink-0" />
                     ) : isHighwayTouch ? (
@@ -301,7 +301,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   <span className="text-[10px] font-bold uppercase text-slate-500 block">
                     Total Price
                   </span>
-                  <span className="font-serif-luxury font-bold text-sm sm:text-base text-[#002347] block mt-1 truncate">
+                  <span className="font-serif-luxury font-bold text-sm sm:text-base text-[#0D3823] block mt-1 truncate">
                     {property.totalPrice}
                   </span>
                 </div>
@@ -343,7 +343,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   <span className="text-[10px] font-bold uppercase text-slate-500 block truncate">
                     Distance from Nagpur
                   </span>
-                  <span className="font-semibold text-xs sm:text-sm text-[#002347] block mt-1 truncate">
+                  <span className="font-semibold text-xs sm:text-sm text-[#0D3823] block mt-1 truncate">
                     {property.distanceKm} KM from Nagpur
                   </span>
                 </div>
@@ -357,7 +357,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="font-bold text-[#002347] block text-sm">
+                  <span className="font-bold text-[#0D3823] block text-sm">
                     Verified Revenue Land Title (7/12 &amp; 8A Clear)
                   </span>
                   <span className="text-slate-600 font-mono text-[11px]">
@@ -374,7 +374,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
 
             {/* Narrative Description */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#002347] mb-2 flex items-center gap-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-2 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#C5A059]" />
                 Parcel Overview
               </h4>
@@ -385,7 +385,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
 
             {/* Highlights */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#002347] mb-2.5">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D3823] mb-2.5">
                 Key Highlights
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -402,7 +402,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             </div>
 
             {/* Direct Connect Card */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#002347] border border-[#C5A059]/40 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#0D3823] border border-[#C5A059]/40 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <h5 className="font-serif-luxury font-bold text-base text-[#E6C687]">
                   Connect with {COMPANY_DETAILS.founder}
@@ -430,7 +430,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
               <span className="text-[10px] text-slate-500 uppercase tracking-widest block font-medium">
                 Rate / Outlay
               </span>
-              <span className="text-base sm:text-lg font-serif-luxury font-bold text-[#002347]">
+              <span className="text-base sm:text-lg font-serif-luxury font-bold text-[#0D3823]">
                 {property.ratePerAcre}
               </span>
             </div>
@@ -450,7 +450,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="hidden sm:inline-flex px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:text-[#002347] text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer"
+              className="hidden sm:inline-flex px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:text-[#0D3823] text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer"
             >
               Close
             </button>
@@ -472,7 +472,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                 onClose();
                 onBookNow(property);
               }}
-              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#E6C687] text-[#002347] font-bold text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#E6C687] text-[#0D3823] font-bold text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Schedule Site Visit</span>

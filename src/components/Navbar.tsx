@@ -52,8 +52,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       id="main-navigation-header"
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#002347]/95 backdrop-blur-md border-b border-[#C5A059]/30 py-2.5 sm:py-3 shadow-lg shadow-[#002347]/30'
-          : 'bg-[#002347] py-3.5 sm:py-4 border-b border-[#001730]'
+          ? 'bg-[#0D3823]/95 backdrop-blur-md border-b border-[#C5A059]/30 py-2.5 sm:py-3 shadow-lg shadow-[#0D3823]/30'
+          : 'bg-[#0D3823] py-3.5 sm:py-4 border-b border-[#072618]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -63,11 +63,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-center gap-3 cursor-pointer group select-none"
         >
           {/* Custom Logo Image with Gold Frame & Monogram Fallback */}
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#001730] border border-[#C5A059]/80 overflow-hidden flex items-center justify-center shadow-md group-hover:border-[#E6C687] transition-all shrink-0">
+          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-black border border-[#C5A059]/80 overflow-hidden flex items-center justify-center shadow-md group-hover:border-[#E6C687] transition-all shrink-0">
             {!logoError && COMPANY_DETAILS.logoUrl ? (
               <img
                 src={COMPANY_DETAILS.logoUrl}
                 alt="Nagpur Acres Logo"
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
                 onError={() => setLogoError(true)}
               />
@@ -95,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             href={COMPANY_DETAILS.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#001730] border border-[#C5A059]/40 hover:border-[#E6C687] text-xs font-semibold text-slate-200 hover:text-[#E6C687] transition-all group"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#072618] border border-[#C5A059]/40 hover:border-[#E6C687] text-xs font-semibold text-slate-200 hover:text-[#E6C687] transition-all group"
             title={`Follow us on Instagram ${COMPANY_DETAILS.instagramHandle}`}
           >
             <Instagram className="w-3.5 h-3.5 text-[#E6C687] group-hover:scale-110 transition-transform" />
@@ -106,9 +107,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="nav-contact-us-button"
             onClick={() => onOpenBooking()}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-xs uppercase tracking-wider shadow-md shadow-[#C5A059]/20 transition-all transform active:scale-95 cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#0D3823] font-bold text-xs uppercase tracking-wider shadow-md shadow-[#C5A059]/20 transition-all transform active:scale-95 cursor-pointer"
           >
-            <Building className="w-3.5 h-3.5 text-[#002347]" />
+            <Building className="w-3.5 h-3.5 text-[#0D3823]" />
             <span>Schedule Meeting</span>
           </button>
         </div>
@@ -117,14 +118,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex sm:hidden items-center gap-2">
           <button
             onClick={() => onOpenBooking()}
-            className="px-2.5 py-1.5 rounded-lg bg-[#C5A059] text-[#002347] font-bold text-[11px] uppercase tracking-wider cursor-pointer"
+            className="px-2.5 py-1.5 rounded-lg bg-[#C5A059] text-[#0D3823] font-bold text-[11px] uppercase tracking-wider cursor-pointer"
           >
             Book Visit
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-[#001730] border border-white/15 text-slate-200 hover:text-white focus:outline-none cursor-pointer"
+            className="p-2 rounded-lg bg-[#072618] border border-white/15 text-slate-200 hover:text-white focus:outline-none cursor-pointer"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -134,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#002347] border-b border-[#C5A059]/30 px-6 py-6 space-y-4 backdrop-blur-xl animate-fadeIn">
+        <div className="sm:hidden bg-[#0D3823] border-b border-[#C5A059]/30 px-6 py-6 space-y-4 backdrop-blur-xl animate-fadeIn">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <button
@@ -154,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-gradient-to-r from-[#C5A059] to-[#E6C687] text-[#002347] font-bold text-xs uppercase tracking-wider shadow-md cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-gradient-to-r from-[#C5A059] to-[#E6C687] text-[#0D3823] font-bold text-xs uppercase tracking-wider shadow-md cursor-pointer"
             >
               <Building className="w-4 h-4" />
               <span>Schedule Consultation</span>

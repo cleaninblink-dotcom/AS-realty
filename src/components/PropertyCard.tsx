@@ -44,7 +44,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
           onViewDetails(property);
         }
       }}
-      className="group relative flex flex-col bg-white border border-slate-200 border-b-4 border-b-[#002347] hover:border-b-[#C5A059] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#C5A059]"
+      className="group relative flex flex-col bg-white border border-slate-200 border-b-4 border-b-[#0D3823] hover:border-b-[#C5A059] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#C5A059]"
     >
       {/* Property Image Container (Clean image with no written text) */}
       <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -62,7 +62,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
           {/* Header row: Property Name & Status & Type */}
           <div className="flex items-center justify-between gap-2 mb-2">
             <div className="flex items-center gap-2">
-              <h3 className="text-xl font-serif-luxury font-bold text-[#002347] group-hover:text-[#C5A059] transition-colors">
+              <h3 className="text-xl font-serif-luxury font-bold text-[#0D3823] group-hover:text-[#C5A059] transition-colors">
                 {property.name}
               </h3>
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -77,7 +77,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
 
           {/* Rate Per Acre & Special Feature Row */}
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
-            <div className="text-lg sm:text-xl font-serif-luxury font-bold text-[#002347]">
+            <div className="text-lg sm:text-xl font-serif-luxury font-bold text-[#0D3823]">
               {property.ratePerAcre}
             </div>
             {property.specialFeature && (
@@ -98,7 +98,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               <span className="text-[10px] uppercase font-bold text-slate-500 block">
                 Total Land
               </span>
-              <div className="flex items-center gap-1.5 font-bold text-sm text-[#002347] mt-0.5">
+              <div className="flex items-center gap-1.5 font-bold text-sm text-[#0D3823] mt-0.5">
                 {isLakeTouch ? (
                   <Waves className="w-4 h-4 text-cyan-600 shrink-0" />
                 ) : isHighwayTouch ? (
@@ -117,7 +117,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               <span className="text-[10px] uppercase font-bold text-slate-500 block">
                 Total Price
               </span>
-              <div className="flex items-center gap-1 font-serif-luxury font-bold text-sm sm:text-base text-[#002347] mt-0.5">
+              <div className="flex items-center gap-1 font-serif-luxury font-bold text-sm sm:text-base text-[#0D3823] mt-0.5">
                 <IndianRupee className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
                 <span className="truncate">{property.totalPrice}</span>
               </div>
@@ -138,7 +138,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               <span className="text-[10px] uppercase font-bold text-slate-500 block truncate">
                 Distance from Nagpur
               </span>
-              <div className="flex items-center gap-1.5 font-bold text-xs sm:text-sm text-[#002347] mt-0.5">
+              <div className="flex items-center gap-1.5 font-bold text-xs sm:text-sm text-[#0D3823] mt-0.5">
                 <MapPin className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
                 <span className="truncate">{property.distanceKm} KM from Nagpur</span>
               </div>
@@ -179,9 +179,9 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
               e.stopPropagation();
               onBookNow(property);
             }}
-            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-xs shadow-md transition-all cursor-pointer"
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#0D3823] font-bold text-xs shadow-md transition-all cursor-pointer"
           >
-            <CalendarCheck className="w-4 h-4 text-[#002347] shrink-0" />
+            <CalendarCheck className="w-4 h-4 text-[#0D3823] shrink-0" />
             <span>Book Visit</span>
           </button>
         </div>

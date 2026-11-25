@@ -5,8 +5,7 @@ export const COMPANY_DETAILS = {
   tagline: 'Nagpur’s Premier Land & Farmhouse Advisory',
   founder: 'Aditya Shivpeth',
   title: 'Founder & Managing Director',
-  logoUrl:
-    'https://instagram.fnag12-1.fna.fbcdn.net/v/t51.82787-19/849772942_18066479072784641_7951094449264636477_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ig_cache_key=GI6BpjIBsXnzXS9AAD2y-19G9ldubmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=7XWzhGnOc-AQ7kNvwFP_bQk&_nc_oc=Adp4dSPwLXFUDiQBzmmliDZmmzOUIlJuu28E_HY1H69Rb0w1FLBcssnT9lCbKAw15JY&_nc_zt=24&_nc_ht=instagram.fnag12-1.fna&_nc_gid=2uTs6mB7Yq5Jv498WI0JfA&_nc_ss=7baaf&oh=00_AQRQSFXYt97NHctEeh3VxBTBrlUJOYPXrRPUe6ia2-wIYw&oe=6AEFEF75',
+  logoUrl: '/assets/aistudio/image_b9d33584.png',
   phoneDisplay: '+91 87677 82263',
   whatsappNumber: '918767782263',
   email: 'concierge@nagpuracres.in',

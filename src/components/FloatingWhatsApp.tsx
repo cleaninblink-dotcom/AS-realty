@@ -16,14 +16,15 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       {/* Floating Popup Card */}
       {isOpen && (
-        <div className="mb-3 w-80 p-4 rounded-2xl bg-white border border-slate-200 border-b-4 border-b-[#002347] shadow-2xl text-slate-800 animate-fadeIn">
+        <div className="mb-3 w-80 p-4 rounded-2xl bg-white border border-slate-200 border-b-4 border-b-[#0D3823] shadow-2xl text-slate-800 animate-fadeIn">
           <div className="flex items-start justify-between pb-3 border-b border-slate-100">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-[#002347] text-[#E6C687] border border-[#C5A059]/60 overflow-hidden flex items-center justify-center font-bold text-sm shrink-0">
+              <div className="w-9 h-9 rounded-full bg-[#0D3823] text-[#E6C687] border border-[#C5A059]/60 overflow-hidden flex items-center justify-center font-bold text-sm shrink-0">
                 {!logoError && COMPANY_DETAILS.logoUrl ? (
                   <img
                     src={COMPANY_DETAILS.logoUrl}
                     alt="Nagpur Acres"
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
                     onError={() => setLogoError(true)}
                   />
@@ -32,7 +33,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
                 )}
               </div>
               <div>
-                <h4 className="text-sm font-serif-luxury font-bold text-[#002347]">
+                <h4 className="text-sm font-serif-luxury font-bold text-[#0D3823]">
                   Nagpur Acres Concierge
                 </h4>
                 <p className="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
@@ -51,7 +52,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
           </div>
 
           <p className="text-xs text-slate-600 my-3 leading-relaxed">
-            Welcome to <strong className="text-[#002347]">Nagpur Acres</strong>. Connect directly with our team under the leadership of <strong className="text-[#002347]">{COMPANY_DETAILS.founder}</strong>.
+            Welcome to <strong className="text-[#0D3823]">Nagpur Acres</strong>. Connect directly with our team under the leadership of <strong className="text-[#0D3823]">{COMPANY_DETAILS.founder}</strong>.
           </p>
 
           <div className="space-y-2">
@@ -60,7 +61,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
                 setIsOpen(false);
                 onOpenBooking();
               }}
-              className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-[#002347] hover:bg-[#001730] text-[#E6C687] border border-[#C5A059]/40 font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer"
+              className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-[#0D3823] hover:bg-[#072618] text-[#E6C687] border border-[#C5A059]/40 font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer"
             >
               <span className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-[#C5A059]" />
@@ -102,7 +103,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
       >
         <div className="relative">
           <MessageSquare className="w-5 h-5 fill-white" />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#C5A059] rounded-full border-2 border-[#002347] animate-ping" />
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#C5A059] rounded-full border-2 border-[#0D3823] animate-ping" />
         </div>
         <span className="text-xs font-semibold tracking-wide hidden sm:inline">
           Chat on WhatsApp

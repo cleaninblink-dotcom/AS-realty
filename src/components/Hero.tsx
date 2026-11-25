@@ -15,14 +15,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           alt="Luxury Architecture Nagpur Acres"
           className="w-full h-full object-cover object-center scale-105 filter brightness-[0.38] contrast-[1.08]"
         />
-        {/* Deep Editorial Navy and Gold Ambient Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#002347] via-[#002347]/90 to-[#002347]/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#002347] via-transparent to-[#002347]/65" />
+        {/* Deep Editorial Forest Green and Gold Ambient Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D3823] via-[#0D3823]/90 to-[#0D3823]/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D3823] via-transparent to-[#0D3823]/65" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Prestige Pill */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#001730]/90 border border-[#C5A059]/50 backdrop-blur-md mb-6 shadow-lg">
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#072618]/90 border border-[#C5A059]/50 backdrop-blur-md mb-6 shadow-lg">
           <Sparkles className="w-3.5 h-3.5 text-[#E6C687]" />
           <span className="text-xs uppercase tracking-widest text-[#E6C687] font-semibold">
             Nagpur Premier Real Estate Advisory
@@ -46,15 +46,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="#properties-section"
-            className="flex items-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#002347] font-bold text-sm tracking-wider uppercase shadow-xl shadow-[#C5A059]/25 transition-all transform active:scale-95 cursor-pointer"
+            className="flex items-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#E6C687] hover:from-[#B8924B] hover:to-[#D9B97A] text-[#0D3823] font-bold text-sm tracking-wider uppercase shadow-xl shadow-[#C5A059]/25 transition-all transform active:scale-95 cursor-pointer"
           >
-            <Sparkles className="w-4 h-4 text-[#002347]" />
+            <Sparkles className="w-4 h-4 text-[#0D3823]" />
             <span>Explore All 15 Properties</span>
           </a>
 
           <a
             href="#comparison-section"
-            className="flex items-center gap-2 px-6 py-4 rounded-xl bg-[#001730]/85 hover:bg-[#001730] border border-[#C5A059]/40 text-white font-medium text-sm tracking-wider transition-all"
+            className="flex items-center gap-2 px-6 py-4 rounded-xl bg-[#072618]/85 hover:bg-[#072618] border border-[#C5A059]/40 text-white font-medium text-sm tracking-wider transition-all"
           >
             <span>Property Comparison Table</span>
             <ArrowRight className="w-4 h-4 text-[#E6C687]" />
@@ -64,7 +64,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         {/* High-Status Trust Metrics Bar */}
         <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-white/15 text-slate-200">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-[#001730] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
+            <div className="p-2.5 rounded-xl bg-[#072618] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
               <Shield className="w-5 h-5" />
             </div>
             <div>
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-[#001730] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
+            <div className="p-2.5 rounded-xl bg-[#072618] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
               <Award className="w-5 h-5" />
             </div>
             <div>
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-[#001730] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
+            <div className="p-2.5 rounded-xl bg-[#072618] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-[#001730] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
+            <div className="p-2.5 rounded-xl bg-[#072618] border border-[#C5A059]/40 text-[#E6C687] shrink-0">
               <Calendar className="w-5 h-5" />
             </div>
             <div>

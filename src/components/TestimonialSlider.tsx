@@ -162,16 +162,16 @@ export const TestimonialSlider: React.FC = () => {
     >
       {/* Background Accent Gradients */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#002347]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0D3823]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002347] border border-[#C5A059]/40 text-xs text-[#E6C687] uppercase tracking-widest font-semibold mb-3 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0D3823] border border-[#C5A059]/40 text-xs text-[#E6C687] uppercase tracking-widest font-semibold mb-3 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#E6C687]" />
             Client Endorsements &amp; Due Diligence Track Record
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-[#002347] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-[#0D3823] tracking-tight">
             Trusted by Nagpur’s Discerning Land Buyers
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
@@ -187,7 +187,7 @@ export const TestimonialSlider: React.FC = () => {
                 onClick={() => setSelectedFilter(cat)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   selectedFilter === cat
-                    ? 'bg-[#002347] text-[#E6C687] shadow-sm'
+                    ? 'bg-[#0D3823] text-[#E6C687] shadow-sm'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200'
                 }`}
               >
@@ -199,7 +199,7 @@ export const TestimonialSlider: React.FC = () => {
 
         {/* Main Testimonial Slider Card */}
         <div className="relative max-w-4xl mx-auto">
-          <div className="relative bg-[#002347] rounded-3xl p-6 sm:p-10 lg:p-12 text-white shadow-2xl border border-[#C5A059]/40 overflow-hidden">
+          <div className="relative bg-[#0D3823] rounded-3xl p-6 sm:p-10 lg:p-12 text-white shadow-2xl border border-[#C5A059]/40 overflow-hidden">
             {/* Top Gold Accent Bar */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#C5A059] via-[#E6C687] to-[#C5A059]" />
 
@@ -218,7 +218,7 @@ export const TestimonialSlider: React.FC = () => {
                       loading="lazy"
                     />
                   </div>
-                  <span className="absolute -bottom-2 -right-2 p-1.5 rounded-full bg-emerald-600 text-white shadow-md border-2 border-[#002347]" title="Verified Legal Registry">
+                  <span className="absolute -bottom-2 -right-2 p-1.5 rounded-full bg-emerald-600 text-white shadow-md border-2 border-[#0D3823]" title="Verified Legal Registry">
                     <CheckCircle2 className="w-4 h-4" />
                   </span>
                 </div>
@@ -309,7 +309,7 @@ export const TestimonialSlider: React.FC = () => {
                   onClick={() => setCurrentIndex(idx)}
                   className={`h-2.5 rounded-full transition-all cursor-pointer ${
                     idx === currentIndex
-                      ? 'w-8 bg-[#002347]'
+                      ? 'w-8 bg-[#0D3823]'
                       : 'w-2.5 bg-slate-300 hover:bg-slate-400'
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
@@ -322,7 +322,7 @@ export const TestimonialSlider: React.FC = () => {
               <button
                 type="button"
                 onClick={handlePrev}
-                className="p-2.5 rounded-xl bg-white hover:bg-[#002347] text-[#002347] hover:text-[#E6C687] border border-slate-300 hover:border-[#002347] shadow-sm transition-all cursor-pointer active:scale-95"
+                className="p-2.5 rounded-xl bg-white hover:bg-[#0D3823] text-[#0D3823] hover:text-[#E6C687] border border-slate-300 hover:border-[#0D3823] shadow-sm transition-all cursor-pointer active:scale-95"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -331,7 +331,7 @@ export const TestimonialSlider: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="p-2.5 rounded-xl bg-[#002347] hover:bg-[#001730] text-[#E6C687] shadow-md transition-all cursor-pointer active:scale-95"
+                className="p-2.5 rounded-xl bg-[#0D3823] hover:bg-[#072618] text-[#E6C687] shadow-md transition-all cursor-pointer active:scale-95"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -347,7 +347,7 @@ export const TestimonialSlider: React.FC = () => {
               <Award className="w-5 h-5" />
             </div>
             <div>
-              <p className="font-serif-luxury font-bold text-sm text-[#002347]">45+ Parcels</p>
+              <p className="font-serif-luxury font-bold text-sm text-[#0D3823]">45+ Parcels</p>
               <p className="text-[11px] text-slate-500">Registered in Nagpur Outskirts</p>
             </div>
           </div>
@@ -357,17 +357,17 @@ export const TestimonialSlider: React.FC = () => {
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <p className="font-serif-luxury font-bold text-sm text-[#002347]">100% Clear</p>
+              <p className="font-serif-luxury font-bold text-sm text-[#0D3823]">100% Clear</p>
               <p className="text-[11px] text-slate-500">Single Pedigree 7/12 Titles</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <p className="font-serif-luxury font-bold text-sm text-[#002347]">Zero Litigation</p>
+              <p className="font-serif-luxury font-bold text-sm text-[#0D3823]">Zero Litigation</p>
               <p className="text-[11px] text-slate-500">Full Legal Due Diligence</p>
             </div>
           </div>

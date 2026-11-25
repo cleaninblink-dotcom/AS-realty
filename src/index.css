@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #002347;
-  --navy-dark: #001730;
+  --forest: #0D3823;
+  --forest-dark: #072618;
   --gold: #C5A059;
   --gold-light: #E6C687;
   --white: #FFFFFF;
@@ -37,8 +37,9 @@
 }
 
 /* Editorial card bottom accents */
-.card-editorial-navy {
-  border-bottom: 4px solid #002347;
+.card-editorial-navy,
+.card-editorial-forest {
+  border-bottom: 4px solid #0D3823;
 }
 
 .card-editorial-gold {

@@ -30,11 +30,11 @@ export const PropertyComparisonTable: React.FC<PropertyComparisonTableProps> = (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002347] border border-[#C5A059]/40 text-xs text-[#E6C687] uppercase tracking-widest font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0D3823] border border-[#C5A059]/40 text-xs text-[#E6C687] uppercase tracking-widest font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#E6C687]" />
             Side-by-Side Analysis
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-[#002347] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-[#0D3823] tracking-tight">
             Property Comparison
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
@@ -43,11 +43,11 @@ export const PropertyComparisonTable: React.FC<PropertyComparisonTableProps> = (
         </div>
 
         {/* The Exact Comparison Matrix Table Container */}
-        <div className="bg-[#F8F9FA] border border-slate-200 border-b-4 border-b-[#002347] rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-[#F8F9FA] border border-slate-200 border-b-4 border-b-[#0D3823] rounded-2xl shadow-xl overflow-hidden">
           {/* Table Header Bar */}
-          <div className="p-4 sm:p-5 bg-[#002347] text-white flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="p-4 sm:p-5 bg-[#0D3823] text-white flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
-              <span className="p-2 rounded-lg bg-[#001730] border border-[#C5A059]/40 text-[#E6C687]">
+              <span className="p-2 rounded-lg bg-[#072618] border border-[#C5A059]/40 text-[#E6C687]">
                 <Table className="w-5 h-5" />
               </span>
               <div>
@@ -95,11 +95,11 @@ export const PropertyComparisonTable: React.FC<PropertyComparisonTableProps> = (
                       {/* Property Number & Title */}
                       <td className="py-4 px-4 sm:px-6 whitespace-nowrap">
                         <div className="flex items-center gap-3">
-                          <span className="w-8 h-8 rounded-lg bg-[#002347] text-[#E6C687] font-bold text-xs flex items-center justify-center font-mono shrink-0 shadow-xs">
+                          <span className="w-8 h-8 rounded-lg bg-[#0D3823] text-[#E6C687] font-bold text-xs flex items-center justify-center font-mono shrink-0 shadow-xs">
                             {prop.propertyNumber}
                           </span>
                           <div>
-                            <span className="font-bold text-[#002347] text-sm group-hover:text-[#C5A059] transition-colors block">
+                            <span className="font-bold text-[#0D3823] text-sm group-hover:text-[#C5A059] transition-colors block">
                               Property {prop.propertyNumber}
                             </span>
                             <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -124,7 +124,7 @@ export const PropertyComparisonTable: React.FC<PropertyComparisonTableProps> = (
 
                       {/* Total Price */}
                       <td className="py-4 px-4 sm:px-6 whitespace-nowrap">
-                        <span className="font-serif-luxury font-bold text-base text-[#002347]">
+                        <span className="font-serif-luxury font-bold text-base text-[#0D3823]">
                           {prop.totalPriceShort}
                         </span>
                         {prop.totalPrice !== prop.totalPriceShort && (
@@ -168,7 +168,7 @@ export const PropertyComparisonTable: React.FC<PropertyComparisonTableProps> = (
                           <button
                             type="button"
                             onClick={() => onSelectProperty(prop)}
-                            className="p-2 sm:px-3 sm:py-1.5 rounded-lg border border-slate-300 hover:border-[#002347] hover:bg-slate-50 text-[#002347] font-semibold text-xs transition-colors flex items-center gap-1 cursor-pointer"
+                            className="p-2 sm:px-3 sm:py-1.5 rounded-lg border border-slate-300 hover:border-[#0D3823] hover:bg-slate-50 text-[#0D3823] font-semibold text-xs transition-colors flex items-center gap-1 cursor-pointer"
                             title="View Full Specifications"
                           >
                             <Eye className="w-3.5 h-3.5" />
